@@ -12,9 +12,9 @@ namespace ISDS454_IMS_Forms
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) //This is the Authentication Cancel Button
         {
-
+            this.Close(); //Closes the Authentication Page
         }
 
         private void button1_Click(object sender, EventArgs e)

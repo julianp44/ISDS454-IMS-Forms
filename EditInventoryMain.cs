@@ -24,7 +24,7 @@ namespace ISDS454_IMS_Forms
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();//closes this page leaving the Main Menu visible
         }
     }
 }

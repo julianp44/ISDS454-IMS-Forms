@@ -31,7 +31,7 @@
             EditIMSLabel = new Label();
             InventoryDataTable = new DataGridView();
             AddItemButton = new Button();
-            CancelButton = new Button();
+            EditInventoryCancelButton = new Button();
             NextButton = new Button();
             UpdateItemCheck = new CheckBox();
             DeleteItemCheck = new CheckBox();
@@ -68,17 +68,17 @@
             AddItemButton.Text = "Add New Inventory Item";
             AddItemButton.UseVisualStyleBackColor = true;
             // 
-            // CancelButton
+            // EditInventoryCancelButton
             // 
-            CancelButton.BackColor = Color.FromArgb(255, 128, 128);
-            CancelButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CancelButton.Location = new Point(1428, 1096);
-            CancelButton.Name = "CancelButton";
-            CancelButton.Size = new Size(180, 47);
-            CancelButton.TabIndex = 3;
-            CancelButton.Text = "Cancel";
-            CancelButton.UseVisualStyleBackColor = false;
-            CancelButton.Click += CancelButton_Click;
+            EditInventoryCancelButton.BackColor = Color.FromArgb(255, 128, 128);
+            EditInventoryCancelButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            EditInventoryCancelButton.Location = new Point(1428, 1096);
+            EditInventoryCancelButton.Name = "EditInventoryCancelButton";
+            EditInventoryCancelButton.Size = new Size(180, 47);
+            EditInventoryCancelButton.TabIndex = 3;
+            EditInventoryCancelButton.Text = "Cancel";
+            EditInventoryCancelButton.UseVisualStyleBackColor = false;
+            EditInventoryCancelButton.Click += CancelButton_Click;
             // 
             // NextButton
             // 
@@ -123,7 +123,7 @@
             Controls.Add(DeleteItemCheck);
             Controls.Add(UpdateItemCheck);
             Controls.Add(NextButton);
-            Controls.Add(CancelButton);
+            Controls.Add(EditInventoryCancelButton);
             Controls.Add(AddItemButton);
             Controls.Add(InventoryDataTable);
             Controls.Add(EditIMSLabel);
@@ -141,7 +141,7 @@
         private Label EditIMSLabel;
         private DataGridView InventoryDataTable;
         private Button AddItemButton;
-        private Button CancelButton;
+        private Button EditInventoryCancelButton;
         private Button NextButton;
         private CheckBox UpdateItemCheck;
         private CheckBox DeleteItemCheck;
