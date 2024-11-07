@@ -86,22 +86,24 @@
             // 
             // SignInButton
             // 
+            SignInButton.BackColor = Color.CornflowerBlue;
             SignInButton.Location = new Point(980, 504);
             SignInButton.Name = "SignInButton";
             SignInButton.Size = new Size(160, 35);
             SignInButton.TabIndex = 5;
             SignInButton.Text = "Sign In";
-            SignInButton.UseVisualStyleBackColor = true;
+            SignInButton.UseVisualStyleBackColor = false;
             SignInButton.Click += button1_Click;
             // 
             // LoginCancelButton
             // 
+            LoginCancelButton.BackColor = Color.FromArgb(255, 128, 128);
             LoginCancelButton.Location = new Point(814, 504);
             LoginCancelButton.Name = "LoginCancelButton";
             LoginCancelButton.Size = new Size(160, 35);
             LoginCancelButton.TabIndex = 6;
             LoginCancelButton.Text = "Cancel";
-            LoginCancelButton.UseVisualStyleBackColor = true;
+            LoginCancelButton.UseVisualStyleBackColor = false;
             LoginCancelButton.Click += button2_Click;
             // 
             // InventoryManagementSystem

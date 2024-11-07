@@ -29,13 +29,19 @@
         private void InitializeComponent()
         {
             EditIMSLabel = new Label();
-            InventoryDataTable = new DataGridView();
             AddItemButton = new Button();
             EditInventoryCancelButton = new Button();
             NextButton = new Button();
             UpdateItemCheck = new CheckBox();
             DeleteItemCheck = new CheckBox();
-            ((System.ComponentModel.ISupportInitialize)InventoryDataTable).BeginInit();
+            EditInventoryDataTable = new DataGridView();
+            EditSearchLabel = new Label();
+            EditSearchTextBox = new TextBox();
+            InventorySKU = new DataGridViewTextBoxColumn();
+            ItemName = new DataGridViewTextBoxColumn();
+            ItemQuantity = new DataGridViewTextBoxColumn();
+            ItemLocation = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)EditInventoryDataTable).BeginInit();
             SuspendLayout();
             // 
             // EditIMSLabel
@@ -49,14 +55,6 @@
             EditIMSLabel.Size = new Size(563, 45);
             EditIMSLabel.TabIndex = 0;
             EditIMSLabel.Text = "Edit: Inventory Management System";
-            // 
-            // InventoryDataTable
-            // 
-            InventoryDataTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            InventoryDataTable.Location = new Point(12, 185);
-            InventoryDataTable.Name = "InventoryDataTable";
-            InventoryDataTable.Size = new Size(1801, 807);
-            InventoryDataTable.TabIndex = 1;
             // 
             // AddItemButton
             // 
@@ -114,24 +112,78 @@
             DeleteItemCheck.Text = "Delete Item";
             DeleteItemCheck.UseVisualStyleBackColor = true;
             // 
+            // EditInventoryDataTable
+            // 
+            EditInventoryDataTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            EditInventoryDataTable.Columns.AddRange(new DataGridViewColumn[] { InventorySKU, ItemName, ItemQuantity, ItemLocation });
+            EditInventoryDataTable.Location = new Point(12, 174);
+            EditInventoryDataTable.Name = "EditInventoryDataTable";
+            EditInventoryDataTable.Size = new Size(1801, 807);
+            EditInventoryDataTable.TabIndex = 7;
+            // 
+            // EditSearchLabel
+            // 
+            EditSearchLabel.AutoSize = true;
+            EditSearchLabel.Font = new Font("Segoe UI", 9.75F);
+            EditSearchLabel.Location = new Point(1543, 146);
+            EditSearchLabel.Name = "EditSearchLabel";
+            EditSearchLabel.Size = new Size(50, 17);
+            EditSearchLabel.TabIndex = 10;
+            EditSearchLabel.Text = "Search:";
+            // 
+            // EditSearchTextBox
+            // 
+            EditSearchTextBox.Font = new Font("Segoe UI", 9.75F);
+            EditSearchTextBox.Location = new Point(1594, 143);
+            EditSearchTextBox.Name = "EditSearchTextBox";
+            EditSearchTextBox.Size = new Size(219, 25);
+            EditSearchTextBox.TabIndex = 9;
+            EditSearchTextBox.Text = "Input SKU or product name";
+            // 
+            // InventorySKU
+            // 
+            InventorySKU.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            InventorySKU.HeaderText = "Inventory SKU";
+            InventorySKU.Name = "InventorySKU";
+            // 
+            // ItemName
+            // 
+            ItemName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ItemName.HeaderText = "Item Name";
+            ItemName.Name = "ItemName";
+            // 
+            // ItemQuantity
+            // 
+            ItemQuantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ItemQuantity.HeaderText = "Quantity";
+            ItemQuantity.Name = "ItemQuantity";
+            // 
+            // ItemLocation
+            // 
+            ItemLocation.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ItemLocation.HeaderText = "Location";
+            ItemLocation.Name = "ItemLocation";
+            // 
             // EditInventoryMain
             // 
             AutoScaleDimensions = new SizeF(19F, 45F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1825, 1155);
+            Controls.Add(EditSearchLabel);
+            Controls.Add(EditSearchTextBox);
+            Controls.Add(EditInventoryDataTable);
             Controls.Add(DeleteItemCheck);
             Controls.Add(UpdateItemCheck);
             Controls.Add(NextButton);
             Controls.Add(EditInventoryCancelButton);
             Controls.Add(AddItemButton);
-            Controls.Add(InventoryDataTable);
             Controls.Add(EditIMSLabel);
             Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Margin = new Padding(8, 9, 8, 9);
             Name = "EditInventoryMain";
             Text = "Edit: Inventory Management System";
-            ((System.ComponentModel.ISupportInitialize)InventoryDataTable).EndInit();
+            ((System.ComponentModel.ISupportInitialize)EditInventoryDataTable).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -139,11 +191,17 @@
         #endregion
 
         private Label EditIMSLabel;
-        private DataGridView InventoryDataTable;
         private Button AddItemButton;
         private Button EditInventoryCancelButton;
         private Button NextButton;
         private CheckBox UpdateItemCheck;
         private CheckBox DeleteItemCheck;
+        private DataGridView EditInventoryDataTable;
+        private Label EditSearchLabel;
+        private TextBox EditSearchTextBox;
+        private DataGridViewTextBoxColumn InventorySKU;
+        private DataGridViewTextBoxColumn ItemName;
+        private DataGridViewTextBoxColumn ItemQuantity;
+        private DataGridViewTextBoxColumn ItemLocation;
     }
 }

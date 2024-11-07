@@ -16,5 +16,15 @@ namespace ISDS454_IMS_Forms
         {
             InitializeComponent();
         }
+
+        private void InventoryDataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ViewCancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();   //Closes this window leaving the Main Menu visible
+        }
     }
 }
