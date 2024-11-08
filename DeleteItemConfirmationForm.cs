@@ -26,6 +26,7 @@ namespace ISDS454_IMS_Forms
         {
             //needs code to delete selected item from sql database
             //needs code to open Delete Success page upon successfull delete
+            //needs to log delete into changelog
         }
     }
 }
