@@ -16,5 +16,10 @@ namespace ISDS454_IMS_Forms
         {
             InitializeComponent();
         }
+
+        private void ItemLocationDoneButton_Click(object sender, EventArgs e)
+        {
+            this.Close();  //closes the Item Location Details screen
+        }
     }
 }

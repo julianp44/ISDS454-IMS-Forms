@@ -61,7 +61,7 @@
             ItemLocationDoneButton.TabIndex = 2;
             ItemLocationDoneButton.Text = "Done";
             ItemLocationDoneButton.UseVisualStyleBackColor = true;
-            ItemLocationDoneButton.Click += this.ItemLocationDoneButton_Click;
+            ItemLocationDoneButton.Click += ItemLocationDoneButton_Click;
             // 
             // LocateItemForm
             // 
