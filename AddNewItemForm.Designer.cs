@@ -47,6 +47,8 @@
             SellingPriceLabel = new Label();
             SellingPriceInput = new TextBox();
             CategoryInput = new TextBox();
+            NewItemCancelButton = new Button();
+            AddItemConfirmButton = new Button();
             SuspendLayout();
             // 
             // AddNewItemLabel
@@ -232,11 +234,35 @@
             CategoryInput.TabIndex = 19;
             CategoryInput.Text = "Enter Items category";
             // 
+            // NewItemCancelButton
+            // 
+            NewItemCancelButton.BackColor = Color.FromArgb(255, 128, 128);
+            NewItemCancelButton.Location = new Point(12, 826);
+            NewItemCancelButton.Name = "NewItemCancelButton";
+            NewItemCancelButton.Size = new Size(120, 37);
+            NewItemCancelButton.TabIndex = 20;
+            NewItemCancelButton.Text = "Cancel";
+            NewItemCancelButton.UseVisualStyleBackColor = false;
+            NewItemCancelButton.Click += NewItemCancelButton_Click;
+            // 
+            // AddItemConfirmButton
+            // 
+            AddItemConfirmButton.BackColor = Color.Lime;
+            AddItemConfirmButton.Location = new Point(804, 826);
+            AddItemConfirmButton.Name = "AddItemConfirmButton";
+            AddItemConfirmButton.Size = new Size(120, 37);
+            AddItemConfirmButton.TabIndex = 21;
+            AddItemConfirmButton.Text = "Add Item";
+            AddItemConfirmButton.UseVisualStyleBackColor = false;
+            AddItemConfirmButton.Click += AddItemConfirmButton_Click;
+            // 
             // AddNewItemForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(936, 875);
+            ClientSize = new Size(936, 879);
+            Controls.Add(AddItemConfirmButton);
+            Controls.Add(NewItemCancelButton);
             Controls.Add(CategoryInput);
             Controls.Add(SellingPriceInput);
             Controls.Add(SellingPriceLabel);
@@ -283,5 +309,7 @@
         private Label SellingPriceLabel;
         private TextBox SellingPriceInput;
         private TextBox CategoryInput;
+        private Button NewItemCancelButton;
+        private Button AddItemConfirmButton;
     }
 }

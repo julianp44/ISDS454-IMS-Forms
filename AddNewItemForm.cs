@@ -21,5 +21,16 @@ namespace ISDS454_IMS_Forms
         {
 
         }
+
+        private void NewItemCancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close(); //cancels add new item and closes menu
+        }
+
+        private void AddItemConfirmButton_Click(object sender, EventArgs e)
+        {
+            //need to add code to collect all inputs and add them to corresponding areas in our sql database
+
+        }
     }
 }
