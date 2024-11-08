@@ -28,19 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label1 = new Label();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(333, 26);
+            label1.Name = "label1";
+            label1.Size = new Size(199, 45);
+            label1.TabIndex = 0;
+            label1.Text = "Item Details";
+            label1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 74);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(807, 643);
+            dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // ViewDetailsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(831, 729);
+            Controls.Add(dataGridView1);
+            Controls.Add(label1);
             Name = "ViewDetailsForm";
             Text = "ViewDetailsForm";
             Load += ViewDetailsForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private DataGridView dataGridView1;
     }
 }
