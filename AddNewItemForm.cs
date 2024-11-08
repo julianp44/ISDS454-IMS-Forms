@@ -30,6 +30,8 @@ namespace ISDS454_IMS_Forms
         private void AddItemConfirmButton_Click(object sender, EventArgs e)
         {
             //need to add code to collect all inputs and add them to corresponding areas in our sql database
+            //button also needs to record interaction to logs
+            //button also needs to open up successful item add page upon successfull add
 
         }
     }
