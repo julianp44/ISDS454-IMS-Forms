@@ -26,5 +26,10 @@ namespace ISDS454_IMS_Forms
         {
 
         }
+
+        private void ItemDetailsCancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close(); //Closes current details page.
+        }
     }
 }

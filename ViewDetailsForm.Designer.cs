@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ViewItemDetailsDataTable = new DataGridView();
+            ItemDetailsExportButton = new Button();
+            ItemDetailsCancelButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)ViewItemDetailsDataTable).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -44,26 +46,49 @@
             label1.Text = "Item Details";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // dataGridView1
+            // ViewItemDetailsDataTable
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 74);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(807, 643);
-            dataGridView1.TabIndex = 1;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            ViewItemDetailsDataTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ViewItemDetailsDataTable.Location = new Point(12, 74);
+            ViewItemDetailsDataTable.Name = "ViewItemDetailsDataTable";
+            ViewItemDetailsDataTable.Size = new Size(807, 591);
+            ViewItemDetailsDataTable.TabIndex = 1;
+            ViewItemDetailsDataTable.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // ItemDetailsExportButton
+            // 
+            ItemDetailsExportButton.BackColor = Color.CornflowerBlue;
+            ItemDetailsExportButton.Location = new Point(713, 684);
+            ItemDetailsExportButton.Name = "ItemDetailsExportButton";
+            ItemDetailsExportButton.Size = new Size(107, 33);
+            ItemDetailsExportButton.TabIndex = 2;
+            ItemDetailsExportButton.Text = "Export";
+            ItemDetailsExportButton.UseVisualStyleBackColor = false;
+            // 
+            // ItemDetailsCancelButton
+            // 
+            ItemDetailsCancelButton.BackColor = Color.FromArgb(255, 128, 128);
+            ItemDetailsCancelButton.Location = new Point(12, 684);
+            ItemDetailsCancelButton.Name = "ItemDetailsCancelButton";
+            ItemDetailsCancelButton.Size = new Size(107, 33);
+            ItemDetailsCancelButton.TabIndex = 3;
+            ItemDetailsCancelButton.Text = "Cancel";
+            ItemDetailsCancelButton.UseVisualStyleBackColor = false;
+            ItemDetailsCancelButton.Click += ItemDetailsCancelButton_Click;
             // 
             // ViewDetailsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(831, 729);
-            Controls.Add(dataGridView1);
+            Controls.Add(ItemDetailsCancelButton);
+            Controls.Add(ItemDetailsExportButton);
+            Controls.Add(ViewItemDetailsDataTable);
             Controls.Add(label1);
             Name = "ViewDetailsForm";
             Text = "ViewDetailsForm";
             Load += ViewDetailsForm_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ViewItemDetailsDataTable).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -71,6 +96,8 @@
         #endregion
 
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView ViewItemDetailsDataTable;
+        private Button ItemDetailsExportButton;
+        private Button ItemDetailsCancelButton;
     }
 }
