@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             ViewIMSLabel = new Label();
             ViewLastUpdatesButton = new Button();
             LocateButton = new Button();
@@ -50,9 +51,9 @@
             ViewIMSLabel.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ViewIMSLabel.Location = new Point(655, 70);
             ViewIMSLabel.Name = "ViewIMSLabel";
-            ViewIMSLabel.Size = new Size(559, 45);
+            ViewIMSLabel.Size = new Size(578, 45);
             ViewIMSLabel.TabIndex = 0;
-            ViewIMSLabel.Text = "View: Inventory Managemet System";
+            ViewIMSLabel.Text = "View: Inventory Management System";
             // 
             // ViewLastUpdatesButton
             // 
@@ -124,6 +125,14 @@
             // 
             // ViewInventoryDataTable
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            ViewInventoryDataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             ViewInventoryDataTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ViewInventoryDataTable.Columns.AddRange(new DataGridViewColumn[] { InventorySKU, ItemName, ItemQuantity, ItemLocation });
             ViewInventoryDataTable.Location = new Point(12, 174);

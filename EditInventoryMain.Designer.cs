@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             EditIMSLabel = new Label();
             AddItemButton = new Button();
             EditInventoryCancelButton = new Button();
@@ -35,12 +37,12 @@
             UpdateItemCheck = new CheckBox();
             DeleteItemCheck = new CheckBox();
             EditInventoryDataTable = new DataGridView();
-            EditSearchLabel = new Label();
-            EditSearchTextBox = new TextBox();
             InventorySKU = new DataGridViewTextBoxColumn();
             ItemName = new DataGridViewTextBoxColumn();
             ItemQuantity = new DataGridViewTextBoxColumn();
             ItemLocation = new DataGridViewTextBoxColumn();
+            EditSearchLabel = new Label();
+            EditSearchTextBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)EditInventoryDataTable).BeginInit();
             SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             // 
             EditInventoryCancelButton.BackColor = Color.FromArgb(255, 128, 128);
             EditInventoryCancelButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            EditInventoryCancelButton.Location = new Point(1428, 1096);
+            EditInventoryCancelButton.Location = new Point(12, 1096);
             EditInventoryCancelButton.Name = "EditInventoryCancelButton";
             EditInventoryCancelButton.Size = new Size(180, 47);
             EditInventoryCancelButton.TabIndex = 3;
@@ -114,31 +116,28 @@
             // 
             // EditInventoryDataTable
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            EditInventoryDataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             EditInventoryDataTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             EditInventoryDataTable.Columns.AddRange(new DataGridViewColumn[] { InventorySKU, ItemName, ItemQuantity, ItemLocation });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            EditInventoryDataTable.DefaultCellStyle = dataGridViewCellStyle2;
             EditInventoryDataTable.Location = new Point(12, 174);
             EditInventoryDataTable.Name = "EditInventoryDataTable";
             EditInventoryDataTable.Size = new Size(1801, 807);
             EditInventoryDataTable.TabIndex = 7;
-            // 
-            // EditSearchLabel
-            // 
-            EditSearchLabel.AutoSize = true;
-            EditSearchLabel.Font = new Font("Segoe UI", 9.75F);
-            EditSearchLabel.Location = new Point(1543, 146);
-            EditSearchLabel.Name = "EditSearchLabel";
-            EditSearchLabel.Size = new Size(50, 17);
-            EditSearchLabel.TabIndex = 10;
-            EditSearchLabel.Text = "Search:";
-            // 
-            // EditSearchTextBox
-            // 
-            EditSearchTextBox.Font = new Font("Segoe UI", 9.75F);
-            EditSearchTextBox.Location = new Point(1594, 143);
-            EditSearchTextBox.Name = "EditSearchTextBox";
-            EditSearchTextBox.Size = new Size(219, 25);
-            EditSearchTextBox.TabIndex = 9;
-            EditSearchTextBox.Text = "Input SKU or product name";
             // 
             // InventorySKU
             // 
@@ -163,6 +162,25 @@
             ItemLocation.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ItemLocation.HeaderText = "Location";
             ItemLocation.Name = "ItemLocation";
+            // 
+            // EditSearchLabel
+            // 
+            EditSearchLabel.AutoSize = true;
+            EditSearchLabel.Font = new Font("Segoe UI", 9.75F);
+            EditSearchLabel.Location = new Point(1543, 146);
+            EditSearchLabel.Name = "EditSearchLabel";
+            EditSearchLabel.Size = new Size(50, 17);
+            EditSearchLabel.TabIndex = 10;
+            EditSearchLabel.Text = "Search:";
+            // 
+            // EditSearchTextBox
+            // 
+            EditSearchTextBox.Font = new Font("Segoe UI", 9.75F);
+            EditSearchTextBox.Location = new Point(1594, 143);
+            EditSearchTextBox.Name = "EditSearchTextBox";
+            EditSearchTextBox.Size = new Size(219, 25);
+            EditSearchTextBox.TabIndex = 9;
+            EditSearchTextBox.Text = "Input SKU or product name";
             // 
             // EditInventoryMain
             // 
