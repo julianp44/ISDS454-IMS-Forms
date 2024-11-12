@@ -36,6 +36,7 @@
             // 
             // SuccessfullItemAddLabel
             // 
+            SuccessfullItemAddLabel.Anchor = AnchorStyles.Top;
             SuccessfullItemAddLabel.AutoSize = true;
             SuccessfullItemAddLabel.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SuccessfullItemAddLabel.Location = new Point(209, 9);
@@ -46,6 +47,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 73);
             dataGridView1.Name = "dataGridView1";
@@ -54,6 +56,7 @@
             // 
             // AddItemConfirmationDone
             // 
+            AddItemConfirmationDone.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             AddItemConfirmationDone.Location = new Point(668, 395);
             AddItemConfirmationDone.Name = "AddItemConfirmationDone";
             AddItemConfirmationDone.Size = new Size(120, 43);
