@@ -37,6 +37,7 @@
             // 
             // ConfirmDeleteLabel
             // 
+            ConfirmDeleteLabel.Anchor = AnchorStyles.Top;
             ConfirmDeleteLabel.AutoSize = true;
             ConfirmDeleteLabel.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ConfirmDeleteLabel.Location = new Point(235, 9);
@@ -47,6 +48,7 @@
             // 
             // DeleteItemDataGrid
             // 
+            DeleteItemDataGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DeleteItemDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DeleteItemDataGrid.Location = new Point(12, 69);
             DeleteItemDataGrid.Name = "DeleteItemDataGrid";
@@ -55,6 +57,7 @@
             // 
             // ConfirmDeleteButton
             // 
+            ConfirmDeleteButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ConfirmDeleteButton.BackColor = Color.FromArgb(255, 128, 128);
             ConfirmDeleteButton.Location = new Point(667, 394);
             ConfirmDeleteButton.Name = "ConfirmDeleteButton";
@@ -66,6 +69,7 @@
             // 
             // DeleteCancelButton
             // 
+            DeleteCancelButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             DeleteCancelButton.BackColor = SystemColors.Control;
             DeleteCancelButton.Location = new Point(540, 394);
             DeleteCancelButton.Name = "DeleteCancelButton";
