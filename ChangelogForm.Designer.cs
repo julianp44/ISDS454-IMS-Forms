@@ -36,6 +36,7 @@
             // 
             // ChangelogLabel
             // 
+            ChangelogLabel.Anchor = AnchorStyles.Top;
             ChangelogLabel.AutoSize = true;
             ChangelogLabel.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ChangelogLabel.Location = new Point(504, 45);
@@ -47,6 +48,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 141);
             dataGridView1.Name = "dataGridView1";
@@ -55,6 +57,7 @@
             // 
             // ChangelogDoneButton
             // 
+            ChangelogDoneButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ChangelogDoneButton.Location = new Point(1018, 846);
             ChangelogDoneButton.Name = "ChangelogDoneButton";
             ChangelogDoneButton.Size = new Size(123, 42);
