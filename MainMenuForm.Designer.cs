@@ -34,6 +34,7 @@
             // 
             // EditInventoryMenuButton
             // 
+            EditInventoryMenuButton.Anchor = AnchorStyles.None;
             EditInventoryMenuButton.BackColor = Color.FromArgb(255, 128, 128);
             EditInventoryMenuButton.Location = new Point(244, 240);
             EditInventoryMenuButton.Name = "EditInventoryMenuButton";
@@ -45,6 +46,7 @@
             // 
             // ViewInventoryMenuButton
             // 
+            ViewInventoryMenuButton.Anchor = AnchorStyles.None;
             ViewInventoryMenuButton.BackColor = Color.FromArgb(128, 255, 128);
             ViewInventoryMenuButton.Location = new Point(244, 142);
             ViewInventoryMenuButton.Name = "ViewInventoryMenuButton";
@@ -54,14 +56,14 @@
             ViewInventoryMenuButton.UseVisualStyleBackColor = false;
             ViewInventoryMenuButton.Click += button2_Click;
             // 
-            // MainMenu
+            // MainMenuForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(ViewInventoryMenuButton);
             Controls.Add(EditInventoryMenuButton);
-            Name = "MainMenu";
+            Name = "MainMenuForm";
             Text = "MainMenu";
             ResumeLayout(false);
         }
