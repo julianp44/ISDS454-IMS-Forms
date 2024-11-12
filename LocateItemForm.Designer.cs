@@ -36,6 +36,7 @@
             // 
             // LocateItemFormLabel
             // 
+            LocateItemFormLabel.Anchor = AnchorStyles.Top;
             LocateItemFormLabel.AutoSize = true;
             LocateItemFormLabel.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LocateItemFormLabel.Location = new Point(237, 9);
@@ -47,6 +48,7 @@
             // 
             // LocationDetailsDataGrid
             // 
+            LocationDetailsDataGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             LocationDetailsDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             LocationDetailsDataGrid.Location = new Point(12, 78);
             LocationDetailsDataGrid.Name = "LocationDetailsDataGrid";
@@ -55,6 +57,7 @@
             // 
             // ItemLocationDoneButton
             // 
+            ItemLocationDoneButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ItemLocationDoneButton.Location = new Point(680, 404);
             ItemLocationDoneButton.Name = "ItemLocationDoneButton";
             ItemLocationDoneButton.Size = new Size(108, 34);
