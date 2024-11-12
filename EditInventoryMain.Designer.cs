@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             EditIMSLabel = new Label();
             AddItemButton = new Button();
             EditInventoryCancelButton = new Button();
@@ -36,10 +37,6 @@
             UpdateItemCheck = new CheckBox();
             DeleteItemCheck = new CheckBox();
             EditInventoryDataTable = new DataGridView();
-            InventorySKU = new DataGridViewTextBoxColumn();
-            ItemName = new DataGridViewTextBoxColumn();
-            ItemQuantity = new DataGridViewTextBoxColumn();
-            ItemLocation = new DataGridViewTextBoxColumn();
             EditSearchLabel = new Label();
             EditSearchTextBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)EditInventoryDataTable).BeginInit();
@@ -122,8 +119,7 @@
             // EditInventoryDataTable
             // 
             EditInventoryDataTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            EditInventoryDataTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            EditInventoryDataTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            EditInventoryDataTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -133,35 +129,18 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             EditInventoryDataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             EditInventoryDataTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            EditInventoryDataTable.Columns.AddRange(new DataGridViewColumn[] { InventorySKU, ItemName, ItemQuantity, ItemLocation });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            EditInventoryDataTable.DefaultCellStyle = dataGridViewCellStyle2;
             EditInventoryDataTable.Location = new Point(12, 174);
             EditInventoryDataTable.Name = "EditInventoryDataTable";
             EditInventoryDataTable.Size = new Size(1047, 256);
             EditInventoryDataTable.TabIndex = 7;
-            // 
-            // InventorySKU
-            // 
-            InventorySKU.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            InventorySKU.HeaderText = "Inventory SKU";
-            InventorySKU.Name = "InventorySKU";
-            // 
-            // ItemName
-            // 
-            ItemName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ItemName.HeaderText = "Item Name";
-            ItemName.Name = "ItemName";
-            // 
-            // ItemQuantity
-            // 
-            ItemQuantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ItemQuantity.HeaderText = "Quantity";
-            ItemQuantity.Name = "ItemQuantity";
-            // 
-            // ItemLocation
-            // 
-            ItemLocation.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ItemLocation.HeaderText = "Location";
-            ItemLocation.Name = "ItemLocation";
             // 
             // EditSearchLabel
             // 
@@ -202,6 +181,7 @@
             Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Margin = new Padding(8, 9, 8, 9);
             Name = "EditInventoryMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Edit: Inventory Management System";
             ((System.ComponentModel.ISupportInitialize)EditInventoryDataTable).EndInit();
             ResumeLayout(false);
@@ -219,9 +199,5 @@
         private DataGridView EditInventoryDataTable;
         private Label EditSearchLabel;
         private TextBox EditSearchTextBox;
-        private DataGridViewTextBoxColumn InventorySKU;
-        private DataGridViewTextBoxColumn ItemName;
-        private DataGridViewTextBoxColumn ItemQuantity;
-        private DataGridViewTextBoxColumn ItemLocation;
     }
 }

@@ -12,9 +12,11 @@ namespace ISDS454_IMS_Forms
 {
     public partial class EditInventoryMain : Form
     {
+        DisplayItemInformation itemInfo = new DisplayItemInformation();
         public EditInventoryMain()
         {
             InitializeComponent();
+            EditInventoryDataTable.DataSource = itemInfo.getItemInformation();
         }
 
         private void NextButton_Click(object sender, EventArgs e)

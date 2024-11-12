@@ -74,6 +74,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(SuccessfullItemAddLabel);
             Name = "AddItemConfirmation";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Successfull Add Item Confirmation";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

@@ -305,6 +305,7 @@
             Controls.Add(NameInput);
             Controls.Add(AddNewItemLabel);
             Name = "AddNewItemForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "New Item Form";
             ResumeLayout(false);
             PerformLayout();

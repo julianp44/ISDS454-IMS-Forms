@@ -127,6 +127,7 @@
             Controls.Add(EmployeeIDInputBox);
             Controls.Add(SignInLabel);
             Name = "InventoryManagementSystem";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Inventory Management System";
             Load += Form1_Load;
             ResumeLayout(false);

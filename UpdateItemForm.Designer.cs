@@ -303,6 +303,7 @@
             Controls.Add(UpdateNameInput);
             Controls.Add(UpdateItemLabel);
             Name = "UpdateItemForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Update Item Details";
             ResumeLayout(false);
             PerformLayout();

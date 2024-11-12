@@ -74,6 +74,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Name = "SuccessfulDeleteForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Deleted Item Successfully";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

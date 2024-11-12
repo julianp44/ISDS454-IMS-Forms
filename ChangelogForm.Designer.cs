@@ -75,6 +75,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(ChangelogLabel);
             Name = "ChangelogForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Changelog";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

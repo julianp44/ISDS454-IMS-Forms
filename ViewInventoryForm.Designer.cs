@@ -38,10 +38,6 @@
             ViewSearchLabel = new Label();
             ViewCancelButton = new Button();
             ViewInventoryDataTable = new DataGridView();
-            InventorySKU = new DataGridViewTextBoxColumn();
-            ItemName = new DataGridViewTextBoxColumn();
-            ItemQuantity = new DataGridViewTextBoxColumn();
-            ItemLocation = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)ViewInventoryDataTable).BeginInit();
             SuspendLayout();
             // 
@@ -59,6 +55,7 @@
             // ViewLastUpdatesButton
             // 
             ViewLastUpdatesButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            ViewLastUpdatesButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ViewLastUpdatesButton.BackColor = Color.Cyan;
             ViewLastUpdatesButton.Location = new Point(786, 653);
             ViewLastUpdatesButton.Name = "ViewLastUpdatesButton";
@@ -134,7 +131,7 @@
             // ViewInventoryDataTable
             // 
             ViewInventoryDataTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            ViewInventoryDataTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            ViewInventoryDataTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ViewInventoryDataTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
@@ -145,35 +142,10 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             ViewInventoryDataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             ViewInventoryDataTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ViewInventoryDataTable.Columns.AddRange(new DataGridViewColumn[] { InventorySKU, ItemName, ItemQuantity, ItemLocation });
             ViewInventoryDataTable.Location = new Point(12, 174);
             ViewInventoryDataTable.Name = "ViewInventoryDataTable";
             ViewInventoryDataTable.Size = new Size(978, 367);
             ViewInventoryDataTable.TabIndex = 10;
-            // 
-            // InventorySKU
-            // 
-            InventorySKU.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            InventorySKU.HeaderText = "Inventory SKU";
-            InventorySKU.Name = "InventorySKU";
-            // 
-            // ItemName
-            // 
-            ItemName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ItemName.HeaderText = "Item Name";
-            ItemName.Name = "ItemName";
-            // 
-            // ItemQuantity
-            // 
-            ItemQuantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ItemQuantity.HeaderText = "Quantity";
-            ItemQuantity.Name = "ItemQuantity";
-            // 
-            // ItemLocation
-            // 
-            ItemLocation.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ItemLocation.HeaderText = "Location";
-            ItemLocation.Name = "ItemLocation";
             // 
             // ViewInventoryMain
             // 
@@ -207,9 +179,5 @@
         private Label ViewSearchLabel;
         private Button ViewCancelButton;
         private DataGridView ViewInventoryDataTable;
-        private DataGridViewTextBoxColumn InventorySKU;
-        private DataGridViewTextBoxColumn ItemName;
-        private DataGridViewTextBoxColumn ItemQuantity;
-        private DataGridViewTextBoxColumn ItemLocation;
     }
 }

@@ -89,6 +89,7 @@
             Controls.Add(DeleteItemDataGrid);
             Controls.Add(ConfirmDeleteLabel);
             Name = "DeleteItemConfirmationForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Item Delete Confirmation";
             ((System.ComponentModel.ISupportInitialize)DeleteItemDataGrid).EndInit();
             ResumeLayout(false);

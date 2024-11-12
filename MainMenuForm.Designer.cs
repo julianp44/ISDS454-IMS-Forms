@@ -64,6 +64,7 @@
             Controls.Add(ViewInventoryMenuButton);
             Controls.Add(EditInventoryMenuButton);
             Name = "MainMenuForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MainMenu";
             ResumeLayout(false);
         }

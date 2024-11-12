@@ -75,6 +75,7 @@
             Controls.Add(LocationDetailsDataGrid);
             Controls.Add(LocateItemFormLabel);
             Name = "LocateItemForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Locate Item";
             ((System.ComponentModel.ISupportInitialize)LocationDetailsDataGrid).EndInit();
             ResumeLayout(false);

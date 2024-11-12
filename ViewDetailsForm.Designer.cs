@@ -90,6 +90,7 @@
             Controls.Add(ViewItemDetailsDataTable);
             Controls.Add(label1);
             Name = "ViewDetailsForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ViewDetailsForm";
             Load += ViewDetailsForm_Load;
             ((System.ComponentModel.ISupportInitialize)ViewItemDetailsDataTable).EndInit();
