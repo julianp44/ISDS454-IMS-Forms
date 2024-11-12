@@ -36,6 +36,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(197, 9);
@@ -46,6 +47,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 89);
             dataGridView1.Name = "dataGridView1";
@@ -54,6 +56,7 @@
             // 
             // SuccessfulDeleteDone
             // 
+            SuccessfulDeleteDone.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             SuccessfulDeleteDone.Location = new Point(666, 394);
             SuccessfulDeleteDone.Name = "SuccessfulDeleteDone";
             SuccessfulDeleteDone.Size = new Size(122, 49);
