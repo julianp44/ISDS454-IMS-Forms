@@ -39,7 +39,7 @@
             SuccessfullItemAddLabel.Anchor = AnchorStyles.Top;
             SuccessfullItemAddLabel.AutoSize = true;
             SuccessfullItemAddLabel.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SuccessfullItemAddLabel.Location = new Point(209, 9);
+            SuccessfullItemAddLabel.Location = new Point(175, 9);
             SuccessfullItemAddLabel.Name = "SuccessfullItemAddLabel";
             SuccessfullItemAddLabel.Size = new Size(394, 45);
             SuccessfullItemAddLabel.TabIndex = 0;
@@ -51,13 +51,13 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 73);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(776, 303);
+            dataGridView1.Size = new Size(708, 342);
             dataGridView1.TabIndex = 1;
             // 
             // AddItemConfirmationDone
             // 
             AddItemConfirmationDone.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            AddItemConfirmationDone.Location = new Point(668, 395);
+            AddItemConfirmationDone.Location = new Point(600, 434);
             AddItemConfirmationDone.Name = "AddItemConfirmationDone";
             AddItemConfirmationDone.Size = new Size(120, 43);
             AddItemConfirmationDone.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(732, 489);
             Controls.Add(AddItemConfirmationDone);
             Controls.Add(dataGridView1);
             Controls.Add(SuccessfullItemAddLabel);
