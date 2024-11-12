@@ -53,9 +53,10 @@
             // 
             // AddNewItemLabel
             // 
+            AddNewItemLabel.Anchor = AnchorStyles.Top;
             AddNewItemLabel.AutoSize = true;
             AddNewItemLabel.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AddNewItemLabel.Location = new Point(354, 29);
+            AddNewItemLabel.Location = new Point(289, 29);
             AddNewItemLabel.Name = "AddNewItemLabel";
             AddNewItemLabel.Size = new Size(237, 45);
             AddNewItemLabel.TabIndex = 0;
@@ -64,7 +65,8 @@
             // 
             // NameInput
             // 
-            NameInput.Location = new Point(220, 163);
+            NameInput.Anchor = AnchorStyles.None;
+            NameInput.Location = new Point(199, 169);
             NameInput.Name = "NameInput";
             NameInput.Size = new Size(560, 23);
             NameInput.TabIndex = 1;
@@ -72,9 +74,10 @@
             // 
             // ItemNameLabel
             // 
+            ItemNameLabel.Anchor = AnchorStyles.None;
             ItemNameLabel.AutoSize = true;
             ItemNameLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ItemNameLabel.Location = new Point(75, 161);
+            ItemNameLabel.Location = new Point(54, 167);
             ItemNameLabel.Name = "ItemNameLabel";
             ItemNameLabel.Size = new Size(57, 21);
             ItemNameLabel.TabIndex = 2;
@@ -84,9 +87,10 @@
             // 
             // QuantityLabel
             // 
+            QuantityLabel.Anchor = AnchorStyles.None;
             QuantityLabel.AutoSize = true;
             QuantityLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            QuantityLabel.Location = new Point(75, 209);
+            QuantityLabel.Location = new Point(54, 215);
             QuantityLabel.Name = "QuantityLabel";
             QuantityLabel.Size = new Size(76, 21);
             QuantityLabel.TabIndex = 3;
@@ -95,9 +99,10 @@
             // 
             // LocationLabel
             // 
+            LocationLabel.Anchor = AnchorStyles.None;
             LocationLabel.AutoSize = true;
             LocationLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LocationLabel.Location = new Point(75, 259);
+            LocationLabel.Location = new Point(54, 265);
             LocationLabel.Name = "LocationLabel";
             LocationLabel.Size = new Size(77, 21);
             LocationLabel.TabIndex = 4;
@@ -106,9 +111,10 @@
             // 
             // DescriptionLabel
             // 
+            DescriptionLabel.Anchor = AnchorStyles.None;
             DescriptionLabel.AutoSize = true;
             DescriptionLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DescriptionLabel.Location = new Point(75, 309);
+            DescriptionLabel.Location = new Point(54, 315);
             DescriptionLabel.Name = "DescriptionLabel";
             DescriptionLabel.Size = new Size(98, 21);
             DescriptionLabel.TabIndex = 5;
@@ -117,9 +123,10 @@
             // 
             // ExpiratonDateLabel
             // 
+            ExpiratonDateLabel.Anchor = AnchorStyles.None;
             ExpiratonDateLabel.AutoSize = true;
             ExpiratonDateLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExpiratonDateLabel.Location = new Point(75, 363);
+            ExpiratonDateLabel.Location = new Point(54, 369);
             ExpiratonDateLabel.Name = "ExpiratonDateLabel";
             ExpiratonDateLabel.Size = new Size(125, 21);
             ExpiratonDateLabel.TabIndex = 6;
@@ -128,9 +135,10 @@
             // 
             // CategoryLabel
             // 
+            CategoryLabel.Anchor = AnchorStyles.None;
             CategoryLabel.AutoSize = true;
             CategoryLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CategoryLabel.Location = new Point(75, 416);
+            CategoryLabel.Location = new Point(54, 422);
             CategoryLabel.Name = "CategoryLabel";
             CategoryLabel.Size = new Size(82, 21);
             CategoryLabel.TabIndex = 7;
@@ -139,9 +147,10 @@
             // 
             // SupplierLabel
             // 
+            SupplierLabel.Anchor = AnchorStyles.None;
             SupplierLabel.AutoSize = true;
             SupplierLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SupplierLabel.Location = new Point(81, 471);
+            SupplierLabel.Location = new Point(54, 477);
             SupplierLabel.Name = "SupplierLabel";
             SupplierLabel.Size = new Size(76, 21);
             SupplierLabel.TabIndex = 8;
@@ -150,9 +159,10 @@
             // 
             // CostLabel
             // 
+            CostLabel.Anchor = AnchorStyles.None;
             CostLabel.AutoSize = true;
             CostLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CostLabel.Location = new Point(75, 522);
+            CostLabel.Location = new Point(54, 528);
             CostLabel.Name = "CostLabel";
             CostLabel.Size = new Size(110, 21);
             CostLabel.TabIndex = 9;
@@ -161,7 +171,8 @@
             // 
             // QuantityInput
             // 
-            QuantityInput.Location = new Point(220, 207);
+            QuantityInput.Anchor = AnchorStyles.None;
+            QuantityInput.Location = new Point(199, 213);
             QuantityInput.Name = "QuantityInput";
             QuantityInput.Size = new Size(560, 23);
             QuantityInput.TabIndex = 10;
@@ -169,7 +180,8 @@
             // 
             // LocationInput
             // 
-            LocationInput.Location = new Point(220, 257);
+            LocationInput.Anchor = AnchorStyles.None;
+            LocationInput.Location = new Point(199, 263);
             LocationInput.Name = "LocationInput";
             LocationInput.Size = new Size(560, 23);
             LocationInput.TabIndex = 11;
@@ -177,7 +189,8 @@
             // 
             // DescriptionInput
             // 
-            DescriptionInput.Location = new Point(220, 307);
+            DescriptionInput.Anchor = AnchorStyles.None;
+            DescriptionInput.Location = new Point(199, 313);
             DescriptionInput.Name = "DescriptionInput";
             DescriptionInput.Size = new Size(560, 23);
             DescriptionInput.TabIndex = 12;
@@ -185,7 +198,8 @@
             // 
             // ExpirationDateInput
             // 
-            ExpirationDateInput.Location = new Point(220, 363);
+            ExpirationDateInput.Anchor = AnchorStyles.None;
+            ExpirationDateInput.Location = new Point(199, 369);
             ExpirationDateInput.Name = "ExpirationDateInput";
             ExpirationDateInput.Size = new Size(560, 23);
             ExpirationDateInput.TabIndex = 13;
@@ -193,7 +207,8 @@
             // 
             // SupplierInput
             // 
-            SupplierInput.Location = new Point(220, 469);
+            SupplierInput.Anchor = AnchorStyles.None;
+            SupplierInput.Location = new Point(199, 475);
             SupplierInput.Name = "SupplierInput";
             SupplierInput.Size = new Size(560, 23);
             SupplierInput.TabIndex = 15;
@@ -201,7 +216,8 @@
             // 
             // CostInput
             // 
-            CostInput.Location = new Point(220, 520);
+            CostInput.Anchor = AnchorStyles.None;
+            CostInput.Location = new Point(199, 526);
             CostInput.Name = "CostInput";
             CostInput.Size = new Size(560, 23);
             CostInput.TabIndex = 16;
@@ -209,9 +225,10 @@
             // 
             // SellingPriceLabel
             // 
+            SellingPriceLabel.Anchor = AnchorStyles.None;
             SellingPriceLabel.AutoSize = true;
             SellingPriceLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SellingPriceLabel.Location = new Point(75, 573);
+            SellingPriceLabel.Location = new Point(54, 579);
             SellingPriceLabel.Name = "SellingPriceLabel";
             SellingPriceLabel.Size = new Size(103, 21);
             SellingPriceLabel.TabIndex = 17;
@@ -220,7 +237,8 @@
             // 
             // SellingPriceInput
             // 
-            SellingPriceInput.Location = new Point(220, 571);
+            SellingPriceInput.Anchor = AnchorStyles.None;
+            SellingPriceInput.Location = new Point(199, 577);
             SellingPriceInput.Name = "SellingPriceInput";
             SellingPriceInput.Size = new Size(560, 23);
             SellingPriceInput.TabIndex = 18;
@@ -228,7 +246,8 @@
             // 
             // CategoryInput
             // 
-            CategoryInput.Location = new Point(220, 418);
+            CategoryInput.Anchor = AnchorStyles.None;
+            CategoryInput.Location = new Point(199, 424);
             CategoryInput.Name = "CategoryInput";
             CategoryInput.Size = new Size(560, 23);
             CategoryInput.TabIndex = 19;
@@ -236,8 +255,9 @@
             // 
             // NewItemCancelButton
             // 
+            NewItemCancelButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             NewItemCancelButton.BackColor = Color.FromArgb(255, 128, 128);
-            NewItemCancelButton.Location = new Point(12, 826);
+            NewItemCancelButton.Location = new Point(12, 653);
             NewItemCancelButton.Name = "NewItemCancelButton";
             NewItemCancelButton.Size = new Size(120, 37);
             NewItemCancelButton.TabIndex = 20;
@@ -247,8 +267,9 @@
             // 
             // AddItemConfirmButton
             // 
+            AddItemConfirmButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             AddItemConfirmButton.BackColor = Color.Lime;
-            AddItemConfirmButton.Location = new Point(804, 826);
+            AddItemConfirmButton.Location = new Point(674, 653);
             AddItemConfirmButton.Name = "AddItemConfirmButton";
             AddItemConfirmButton.Size = new Size(120, 37);
             AddItemConfirmButton.TabIndex = 21;
@@ -260,7 +281,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(936, 879);
+            AutoScroll = true;
+            ClientSize = new Size(806, 706);
             Controls.Add(AddItemConfirmButton);
             Controls.Add(NewItemCancelButton);
             Controls.Add(CategoryInput);
