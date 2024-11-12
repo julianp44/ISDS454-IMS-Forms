@@ -39,17 +39,20 @@
             // 
             // SignInLabel
             // 
+            SignInLabel.Anchor = AnchorStyles.Top;
             SignInLabel.AutoSize = true;
             SignInLabel.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SignInLabel.Location = new Point(132, 30);
+            SignInLabel.Location = new Point(340, 9);
+            SignInLabel.MaximumSize = new Size(500, 0);
             SignInLabel.Name = "SignInLabel";
-            SignInLabel.Size = new Size(840, 45);
+            SignInLabel.Size = new Size(487, 90);
             SignInLabel.TabIndex = 0;
-            SignInLabel.Text = "Inventory Management System : Employee Verification";
+            SignInLabel.Text = "Inventory Management System  Employee Verification";
             SignInLabel.TextAlign = ContentAlignment.TopCenter;
             // 
             // EmployeeIDInputBox
             // 
+            EmployeeIDInputBox.Anchor = AnchorStyles.Top;
             EmployeeIDInputBox.Location = new Point(340, 229);
             EmployeeIDInputBox.Name = "EmployeeIDInputBox";
             EmployeeIDInputBox.Size = new Size(476, 23);
@@ -58,6 +61,7 @@
             // 
             // PasswordInputBox
             // 
+            PasswordInputBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             PasswordInputBox.Location = new Point(340, 341);
             PasswordInputBox.Name = "PasswordInputBox";
             PasswordInputBox.Size = new Size(476, 23);
@@ -66,6 +70,7 @@
             // 
             // EmployeeIDLabel
             // 
+            EmployeeIDLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             EmployeeIDLabel.AutoSize = true;
             EmployeeIDLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             EmployeeIDLabel.Location = new Point(340, 205);
@@ -76,6 +81,7 @@
             // 
             // PasswordLabel
             // 
+            PasswordLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             PasswordLabel.AutoSize = true;
             PasswordLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PasswordLabel.Location = new Point(340, 317);
@@ -86,6 +92,7 @@
             // 
             // SignInButton
             // 
+            SignInButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             SignInButton.BackColor = Color.CornflowerBlue;
             SignInButton.Location = new Point(980, 504);
             SignInButton.Name = "SignInButton";
@@ -97,6 +104,7 @@
             // 
             // LoginCancelButton
             // 
+            LoginCancelButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             LoginCancelButton.BackColor = Color.FromArgb(255, 128, 128);
             LoginCancelButton.Location = new Point(814, 504);
             LoginCancelButton.Name = "LoginCancelButton";
