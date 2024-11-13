@@ -31,7 +31,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             EditIMSLabel = new Label();
-            AddItemButton = new Button();
             EditInventoryCancelButton = new Button();
             NextButton = new Button();
             UpdateItemCheck = new CheckBox();
@@ -39,6 +38,8 @@
             EditInventoryDataTable = new DataGridView();
             EditSearchLabel = new Label();
             EditSearchTextBox = new TextBox();
+            addNewInventoryButton = new Button();
+            refreshButton = new Button();
             ((System.ComponentModel.ISupportInitialize)EditInventoryDataTable).BeginInit();
             SuspendLayout();
             // 
@@ -54,17 +55,6 @@
             EditIMSLabel.Size = new Size(563, 45);
             EditIMSLabel.TabIndex = 0;
             EditIMSLabel.Text = "Edit: Inventory Management System";
-            // 
-            // AddItemButton
-            // 
-            AddItemButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            AddItemButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AddItemButton.Location = new Point(12, 447);
-            AddItemButton.Name = "AddItemButton";
-            AddItemButton.Size = new Size(161, 35);
-            AddItemButton.TabIndex = 2;
-            AddItemButton.Text = "Add New Inventory Item";
-            AddItemButton.UseVisualStyleBackColor = true;
             // 
             // EditInventoryCancelButton
             // 
@@ -163,12 +153,36 @@
             EditSearchTextBox.TabIndex = 9;
             EditSearchTextBox.Text = "Input SKU or product name";
             // 
+            // addNewInventoryButton
+            // 
+            addNewInventoryButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            addNewInventoryButton.Location = new Point(12, 457);
+            addNewInventoryButton.Name = "addNewInventoryButton";
+            addNewInventoryButton.Size = new Size(161, 47);
+            addNewInventoryButton.TabIndex = 11;
+            addNewInventoryButton.Text = "Add New Inventory";
+            addNewInventoryButton.UseVisualStyleBackColor = true;
+            addNewInventoryButton.Click += addNewInventoryButton_Click;
+            // 
+            // refreshButton
+            // 
+            refreshButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            refreshButton.Location = new Point(12, 135);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(75, 23);
+            refreshButton.TabIndex = 12;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = true;
+            refreshButton.Click += refreshButton_Click;
+            // 
             // EditInventoryMain
             // 
             AutoScaleDimensions = new SizeF(19F, 45F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1071, 604);
+            Controls.Add(refreshButton);
+            Controls.Add(addNewInventoryButton);
             Controls.Add(EditSearchLabel);
             Controls.Add(EditSearchTextBox);
             Controls.Add(EditInventoryDataTable);
@@ -176,7 +190,6 @@
             Controls.Add(UpdateItemCheck);
             Controls.Add(NextButton);
             Controls.Add(EditInventoryCancelButton);
-            Controls.Add(AddItemButton);
             Controls.Add(EditIMSLabel);
             Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Margin = new Padding(8, 9, 8, 9);
@@ -191,7 +204,6 @@
         #endregion
 
         private Label EditIMSLabel;
-        private Button AddItemButton;
         private Button EditInventoryCancelButton;
         private Button NextButton;
         private CheckBox UpdateItemCheck;
@@ -199,5 +211,7 @@
         private DataGridView EditInventoryDataTable;
         private Label EditSearchLabel;
         private TextBox EditSearchTextBox;
+        private Button addNewInventoryButton;
+        private Button refreshButton;
     }
 }

@@ -30,5 +30,11 @@ namespace ISDS454_IMS_Forms
         {
             this.Close();   //Closes this window leaving the Main Menu visible
         }
+
+        private void ViewDetailsButton_Click(object sender, EventArgs e)
+        {
+            ViewDetailsForm details = new ViewDetailsForm();
+            details.Show();
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace ISDS454_IMS_Forms
         DBconnect connect = new DBconnect();
         public DataTable getItemInformation()
         {
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `inventory`", connect.getconnection);
+            MySqlCommand command = new MySqlCommand("SELECT * FROM iteminformationfull", connect.getconnection);
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);

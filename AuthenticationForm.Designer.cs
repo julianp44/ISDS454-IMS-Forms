@@ -57,7 +57,6 @@
             EmployeeIDInputBox.Name = "EmployeeIDInputBox";
             EmployeeIDInputBox.Size = new Size(476, 23);
             EmployeeIDInputBox.TabIndex = 1;
-            EmployeeIDInputBox.Text = "Enter Employee ID";
             // 
             // PasswordInputBox
             // 
@@ -66,7 +65,7 @@
             PasswordInputBox.Name = "PasswordInputBox";
             PasswordInputBox.Size = new Size(476, 23);
             PasswordInputBox.TabIndex = 2;
-            PasswordInputBox.Text = "Please Enter Password";
+            PasswordInputBox.UseSystemPasswordChar = true;
             // 
             // EmployeeIDLabel
             // 

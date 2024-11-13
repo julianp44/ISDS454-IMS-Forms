@@ -28,5 +28,21 @@ namespace ISDS454_IMS_Forms
         {
             this.Close();//closes this page leaving the Main Menu visible
         }
+
+        private void AddItemButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addNewInventoryButton_Click(object sender, EventArgs e)
+        {
+            AddNewItemForm frm = new AddNewItemForm();
+            frm.Show();
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            EditInventoryDataTable.DataSource = itemInfo.getItemInformation();
+        }
     }
 }

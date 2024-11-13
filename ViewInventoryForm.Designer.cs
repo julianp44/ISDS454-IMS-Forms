@@ -85,6 +85,7 @@
             ViewDetailsButton.TabIndex = 5;
             ViewDetailsButton.Text = "View Details";
             ViewDetailsButton.UseVisualStyleBackColor = false;
+            ViewDetailsButton.Click += ViewDetailsButton_Click;
             // 
             // ExportDataCheck
             // 
