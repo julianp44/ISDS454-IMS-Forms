@@ -32,14 +32,13 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             EditIMSLabel = new Label();
             EditInventoryCancelButton = new Button();
-            NextButton = new Button();
-            UpdateItemCheck = new CheckBox();
-            DeleteItemCheck = new CheckBox();
             EditInventoryDataTable = new DataGridView();
             EditSearchLabel = new Label();
             EditSearchTextBox = new TextBox();
             addNewInventoryButton = new Button();
             refreshButton = new Button();
+            editButton = new Button();
+            delButton = new Button();
             ((System.ComponentModel.ISupportInitialize)EditInventoryDataTable).BeginInit();
             SuspendLayout();
             // 
@@ -69,43 +68,6 @@
             EditInventoryCancelButton.UseVisualStyleBackColor = false;
             EditInventoryCancelButton.Click += CancelButton_Click;
             // 
-            // NextButton
-            // 
-            NextButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            NextButton.BackColor = Color.CornflowerBlue;
-            NextButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NextButton.Location = new Point(879, 545);
-            NextButton.Name = "NextButton";
-            NextButton.Size = new Size(180, 47);
-            NextButton.TabIndex = 4;
-            NextButton.Text = "Next";
-            NextButton.UseVisualStyleBackColor = false;
-            NextButton.Click += NextButton_Click;
-            // 
-            // UpdateItemCheck
-            // 
-            UpdateItemCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            UpdateItemCheck.AutoSize = true;
-            UpdateItemCheck.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            UpdateItemCheck.Location = new Point(196, 457);
-            UpdateItemCheck.Name = "UpdateItemCheck";
-            UpdateItemCheck.Size = new Size(114, 25);
-            UpdateItemCheck.TabIndex = 5;
-            UpdateItemCheck.Text = "Update Item";
-            UpdateItemCheck.UseVisualStyleBackColor = true;
-            // 
-            // DeleteItemCheck
-            // 
-            DeleteItemCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            DeleteItemCheck.AutoSize = true;
-            DeleteItemCheck.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DeleteItemCheck.Location = new Point(327, 457);
-            DeleteItemCheck.Name = "DeleteItemCheck";
-            DeleteItemCheck.Size = new Size(108, 25);
-            DeleteItemCheck.TabIndex = 6;
-            DeleteItemCheck.Text = "Delete Item";
-            DeleteItemCheck.UseVisualStyleBackColor = true;
-            // 
             // EditInventoryDataTable
             // 
             EditInventoryDataTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -131,6 +93,7 @@
             EditInventoryDataTable.Name = "EditInventoryDataTable";
             EditInventoryDataTable.Size = new Size(1047, 256);
             EditInventoryDataTable.TabIndex = 7;
+            EditInventoryDataTable.CellContentClick += EditInventoryDataTable_CellContentClick;
             // 
             // EditSearchLabel
             // 
@@ -175,20 +138,41 @@
             refreshButton.UseVisualStyleBackColor = true;
             refreshButton.Click += refreshButton_Click;
             // 
+            // editButton
+            // 
+            editButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            editButton.Location = new Point(179, 457);
+            editButton.Name = "editButton";
+            editButton.Size = new Size(161, 47);
+            editButton.TabIndex = 13;
+            editButton.Text = "Edit";
+            editButton.UseVisualStyleBackColor = true;
+            editButton.Click += editButton_Click;
+            // 
+            // delButton
+            // 
+            delButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            delButton.Location = new Point(346, 457);
+            delButton.Name = "delButton";
+            delButton.Size = new Size(161, 47);
+            delButton.TabIndex = 14;
+            delButton.Text = "Delete";
+            delButton.UseVisualStyleBackColor = true;
+            delButton.Click += delButton_Click;
+            // 
             // EditInventoryMain
             // 
             AutoScaleDimensions = new SizeF(19F, 45F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1071, 604);
+            Controls.Add(delButton);
+            Controls.Add(editButton);
             Controls.Add(refreshButton);
             Controls.Add(addNewInventoryButton);
             Controls.Add(EditSearchLabel);
             Controls.Add(EditSearchTextBox);
             Controls.Add(EditInventoryDataTable);
-            Controls.Add(DeleteItemCheck);
-            Controls.Add(UpdateItemCheck);
-            Controls.Add(NextButton);
             Controls.Add(EditInventoryCancelButton);
             Controls.Add(EditIMSLabel);
             Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -205,13 +189,12 @@
 
         private Label EditIMSLabel;
         private Button EditInventoryCancelButton;
-        private Button NextButton;
-        private CheckBox UpdateItemCheck;
-        private CheckBox DeleteItemCheck;
         private DataGridView EditInventoryDataTable;
         private Label EditSearchLabel;
         private TextBox EditSearchTextBox;
         private Button addNewInventoryButton;
         private Button refreshButton;
+        private Button editButton;
+        private Button delButton;
     }
 }

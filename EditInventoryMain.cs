@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,6 +44,66 @@ namespace ISDS454_IMS_Forms
         private void refreshButton_Click(object sender, EventArgs e)
         {
             EditInventoryDataTable.DataSource = itemInfo.getItemInformation();
+        }
+
+        private void EditInventoryDataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            EditInventoryForm frm = new EditInventoryForm();
+            frm.Show();
+        }
+
+        private void delButton_Click(object sender, EventArgs e)
+        {
+            // Ensure a row is selected
+            if (EditInventoryDataTable.SelectedRows.Count > 0)
+            {
+                // Get the primary key (e.g., "ID") from the selected row
+                string selectedItem = EditInventoryDataTable.SelectedRows[0].Cells["Name"].Value.ToString();
+
+                // Confirm deletion
+                var confirmResult = MessageBox.Show("Are you sure you want to delete this record?",
+                                                     "Confirm Delete",
+                                                     MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // Delete from the database
+                    DeleteRecordFromDatabase(selectedItem);
+
+                    // Remove the row from the DataGridView
+                    EditInventoryDataTable.Rows.RemoveAt(EditInventoryDataTable.SelectedRows[0].Index);
+                    MessageBox.Show("Record deleted successfully!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to delete.");
+            }
+        }
+
+        private void DeleteRecordFromDatabase(string name)
+        {
+            using (MySqlConnection conn = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=inventorydatabase"))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "DELETE FROM iteminformationfull WHERE NAME = @NAME";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@NAME", name);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
         }
     }
 }

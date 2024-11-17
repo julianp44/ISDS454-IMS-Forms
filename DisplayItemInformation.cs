@@ -20,5 +20,14 @@ namespace ISDS454_IMS_Forms
             adapter.Fill(table);
             return table;
         }
+
+        public DataTable getItemName()
+        {
+            MySqlCommand cmd = new MySqlCommand("SELECT Name FROM iteminformationfull", connect.getconnection);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
     }
 }
