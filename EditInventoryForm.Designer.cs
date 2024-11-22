@@ -31,7 +31,6 @@
             EditItemLabel = new Label();
             editskuLabel = new Label();
             editwarehouseIDLabel = new Label();
-            editwarehouseIDInput = new TextBox();
             editskuInput = new TextBox();
             editCategoryInput = new TextBox();
             editSellingPriceInput = new TextBox();
@@ -54,6 +53,7 @@
             editItemCancelButton = new Button();
             editItemConfirmButton = new Button();
             editDatagridView = new DataGridView();
+            editWarehouseIDComboBox = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)editDatagridView).BeginInit();
             SuspendLayout();
             // 
@@ -92,15 +92,6 @@
             editwarehouseIDLabel.TabIndex = 46;
             editwarehouseIDLabel.Text = "Warehouse ID:";
             editwarehouseIDLabel.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // editwarehouseIDInput
-            // 
-            editwarehouseIDInput.Anchor = AnchorStyles.None;
-            editwarehouseIDInput.Location = new Point(1099, 141);
-            editwarehouseIDInput.Name = "editwarehouseIDInput";
-            editwarehouseIDInput.Size = new Size(211, 23);
-            editwarehouseIDInput.TabIndex = 45;
-            editwarehouseIDInput.Text = "Enter item name";
             // 
             // editskuInput
             // 
@@ -335,17 +326,25 @@
             editDatagridView.CellClick += editDatagridView_CellClick;
             editDatagridView.CellContentClick += editDatagridView_CellContentClick;
             // 
+            // editWarehouseIDComboBox
+            // 
+            editWarehouseIDComboBox.FormattingEnabled = true;
+            editWarehouseIDComboBox.Location = new Point(1099, 141);
+            editWarehouseIDComboBox.Name = "editWarehouseIDComboBox";
+            editWarehouseIDComboBox.Size = new Size(121, 23);
+            editWarehouseIDComboBox.TabIndex = 51;
+            // 
             // EditInventoryForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1344, 706);
+            Controls.Add(editWarehouseIDComboBox);
             Controls.Add(editDatagridView);
             Controls.Add(editItemConfirmButton);
             Controls.Add(editItemCancelButton);
             Controls.Add(editskuLabel);
             Controls.Add(editwarehouseIDLabel);
-            Controls.Add(editwarehouseIDInput);
             Controls.Add(editskuInput);
             Controls.Add(editCategoryInput);
             Controls.Add(editSellingPriceInput);
@@ -379,7 +378,6 @@
         private Label EditItemLabel;
         private Label editskuLabel;
         private Label editwarehouseIDLabel;
-        private TextBox editwarehouseIDInput;
         private TextBox editskuInput;
         private TextBox editCategoryInput;
         private TextBox editSellingPriceInput;
@@ -402,5 +400,6 @@
         private Button editItemCancelButton;
         private Button editItemConfirmButton;
         private DataGridView editDatagridView;
+        private ComboBox editWarehouseIDComboBox;
     }
 }

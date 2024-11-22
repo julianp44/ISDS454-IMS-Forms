@@ -20,6 +20,7 @@ namespace ISDS454_IMS_Forms
         {
             InitializeComponent();
             editDatagridView.DataSource = itemInfo.getItemInformation();
+            LoadComboBox();
         }
 
         private void editItemCancelButton_Click(object sender, EventArgs e)
@@ -36,7 +37,7 @@ namespace ISDS454_IMS_Forms
         {
             connect.openConnnect();
 
-            string updateQuery = "UPDATE inventory SET warehouse_id = '" + editwarehouseIDInput.Text + "',item_name = '" + editNameInput.Text + "', item_quantity = '" + editQuantityInput.Text + "', item_location = '" + editLocationInput.Text + "', item_description = '" + editDescriptionInput.Text + "', item_expirationdate = '" + editExpirationDateInput.Text + "', inventory_type = '" + editCategoryInput.Text + "', supplier_info = '" + editSupplierInput.Text + "', cost_per_unit = '" + double.Parse(editCostInput.Text) + "', sellingprice_per_unit = '" + double.Parse(editSellingPriceInput.Text) + "'WHERE inventory_sku = '"+editskuInput.Text+"'";
+            string updateQuery = "UPDATE inventory SET warehouse_id = '" + editWarehouseIDComboBox.Text + "',item_name = '" + editNameInput.Text + "', item_quantity = '" + editQuantityInput.Text + "', item_location = '" + editLocationInput.Text + "', item_description = '" + editDescriptionInput.Text + "', item_expirationdate = '" + editExpirationDateInput.Text + "', inventory_type = '" + editCategoryInput.Text + "', supplier_info = '" + editSupplierInput.Text + "', cost_per_unit = '" + double.Parse(editCostInput.Text) + "', sellingprice_per_unit = '" + double.Parse(editSellingPriceInput.Text) + "'WHERE inventory_sku = '"+editskuInput.Text+"'";
 
 
             try
@@ -66,7 +67,7 @@ namespace ISDS454_IMS_Forms
                 if (e.RowIndex >= 0)
                 {
                     editskuInput.Text = editDatagridView.SelectedRows[0].Cells[0].Value.ToString();
-                    editwarehouseIDInput.Text = editDatagridView.SelectedRows[0].Cells[1].Value.ToString();
+                    editWarehouseIDComboBox.Text = editDatagridView.SelectedRows[0].Cells[1].Value.ToString();
                     editNameInput.Text = editDatagridView.SelectedRows[0].Cells[2].Value.ToString();
                     editQuantityInput.Text = editDatagridView.SelectedRows[0].Cells[3].Value.ToString();
                     editLocationInput.Text = editDatagridView.SelectedRows[0].Cells[4].Value.ToString();
@@ -83,6 +84,39 @@ namespace ISDS454_IMS_Forms
                 MessageBox.Show("Click on a row to edit");
             }
 
+        }
+
+        private void LoadComboBox()
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=inventorydatabase"))
+                {
+                    // Open the connection
+                    connection.Open();
+
+                    // Define your query
+                    string query = "SELECT DISTINCT warehouse_id FROM warehouse";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Execute the query and read the results
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                // Add each item to the ComboBox
+                                editWarehouseIDComboBox.Items.Add(reader["warehouse_id"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
     }
 }
