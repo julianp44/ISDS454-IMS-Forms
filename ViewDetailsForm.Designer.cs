@@ -40,7 +40,7 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(300, 9);
+            label1.Location = new Point(678, 9);
             label1.Name = "label1";
             label1.Size = new Size(199, 45);
             label1.TabIndex = 0;
@@ -50,10 +50,11 @@
             // ViewItemDetailsDataTable
             // 
             ViewItemDetailsDataTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ViewItemDetailsDataTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ViewItemDetailsDataTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ViewItemDetailsDataTable.Location = new Point(12, 74);
             ViewItemDetailsDataTable.Name = "ViewItemDetailsDataTable";
-            ViewItemDetailsDataTable.Size = new Size(745, 457);
+            ViewItemDetailsDataTable.Size = new Size(1501, 479);
             ViewItemDetailsDataTable.TabIndex = 1;
             ViewItemDetailsDataTable.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -61,7 +62,7 @@
             // 
             ItemDetailsExportButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ItemDetailsExportButton.BackColor = Color.CornflowerBlue;
-            ItemDetailsExportButton.Location = new Point(651, 550);
+            ItemDetailsExportButton.Location = new Point(1407, 572);
             ItemDetailsExportButton.Name = "ItemDetailsExportButton";
             ItemDetailsExportButton.Size = new Size(107, 33);
             ItemDetailsExportButton.TabIndex = 2;
@@ -72,7 +73,7 @@
             // 
             ItemDetailsCancelButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             ItemDetailsCancelButton.BackColor = Color.FromArgb(255, 128, 128);
-            ItemDetailsCancelButton.Location = new Point(12, 550);
+            ItemDetailsCancelButton.Location = new Point(12, 572);
             ItemDetailsCancelButton.Name = "ItemDetailsCancelButton";
             ItemDetailsCancelButton.Size = new Size(107, 33);
             ItemDetailsCancelButton.TabIndex = 3;
@@ -84,7 +85,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(769, 595);
+            ClientSize = new Size(1525, 617);
             Controls.Add(ItemDetailsCancelButton);
             Controls.Add(ItemDetailsExportButton);
             Controls.Add(ViewItemDetailsDataTable);
