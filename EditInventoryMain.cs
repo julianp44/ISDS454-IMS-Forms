@@ -86,7 +86,7 @@ namespace ISDS454_IMS_Forms
                     MessageBox.Show("Please select a row to delete.");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Please select a row to delete.");
             }
@@ -112,6 +112,50 @@ namespace ISDS454_IMS_Forms
                     MessageBox.Show($"Error: {ex.Message}");
                 }
             }
+        }
+        private void EditSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = EditSearchTextBox.Text.Trim();
+            LoadData(searchText);
+        }
+
+        private void LoadData(string searchQuery)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=inventorydatabase;Convert Zero Datetime=True"))
+                {
+                    conn.Open();
+
+                    string query = string.IsNullOrEmpty(searchQuery)
+                        ? "SELECT inventory_sku, warehouse_id, item_name, item_quantity, item_location FROM inventory;"
+                        : "SELECT inventory_sku, warehouse_id, item_name, item_quantity, item_location FROM inventory WHERE inventory_sku LIKE @Search OR item_name LIKE @Search;";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        if (!string.IsNullOrEmpty(searchQuery))
+                        {
+                            cmd.Parameters.AddWithValue("@Search", "%" + searchQuery + "%");
+                        }
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            EditInventoryDataTable.DataSource = dt;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

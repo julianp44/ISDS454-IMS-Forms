@@ -100,7 +100,7 @@
             EditSearchLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             EditSearchLabel.AutoSize = true;
             EditSearchLabel.Font = new Font("Segoe UI", 9.75F);
-            EditSearchLabel.Location = new Point(789, 146);
+            EditSearchLabel.Location = new Point(784, 146);
             EditSearchLabel.Name = "EditSearchLabel";
             EditSearchLabel.Size = new Size(50, 17);
             EditSearchLabel.TabIndex = 10;
@@ -115,6 +115,7 @@
             EditSearchTextBox.Size = new Size(219, 25);
             EditSearchTextBox.TabIndex = 9;
             EditSearchTextBox.Text = "Input SKU or product name";
+            EditSearchTextBox.TextChanged += EditSearchTextBox_TextChanged;
             // 
             // addNewInventoryButton
             // 

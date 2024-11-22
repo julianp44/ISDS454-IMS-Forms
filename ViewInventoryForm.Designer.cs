@@ -46,9 +46,9 @@
             ViewIMSLabel.Anchor = AnchorStyles.Top;
             ViewIMSLabel.AutoSize = true;
             ViewIMSLabel.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewIMSLabel.Location = new Point(235, 12);
+            ViewIMSLabel.Location = new Point(206, 9);
             ViewIMSLabel.Name = "ViewIMSLabel";
-            ViewIMSLabel.Size = new Size(732, 54);
+            ViewIMSLabel.Size = new Size(578, 45);
             ViewIMSLabel.TabIndex = 0;
             ViewIMSLabel.Text = "View: Inventory Management System";
             // 
@@ -57,10 +57,9 @@
             ViewLastUpdatesButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ViewLastUpdatesButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ViewLastUpdatesButton.BackColor = Color.Cyan;
-            ViewLastUpdatesButton.Location = new Point(898, 871);
-            ViewLastUpdatesButton.Margin = new Padding(3, 4, 3, 4);
+            ViewLastUpdatesButton.Location = new Point(786, 653);
             ViewLastUpdatesButton.Name = "ViewLastUpdatesButton";
-            ViewLastUpdatesButton.Size = new Size(233, 60);
+            ViewLastUpdatesButton.Size = new Size(204, 45);
             ViewLastUpdatesButton.TabIndex = 3;
             ViewLastUpdatesButton.Text = "View Last Updates";
             ViewLastUpdatesButton.UseVisualStyleBackColor = false;
@@ -70,10 +69,9 @@
             // 
             LocateButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             LocateButton.BackColor = Color.Coral;
-            LocateButton.Location = new Point(898, 803);
-            LocateButton.Margin = new Padding(3, 4, 3, 4);
+            LocateButton.Location = new Point(786, 602);
             LocateButton.Name = "LocateButton";
-            LocateButton.Size = new Size(233, 60);
+            LocateButton.Size = new Size(204, 45);
             LocateButton.TabIndex = 4;
             LocateButton.Text = "Locate";
             LocateButton.UseVisualStyleBackColor = false;
@@ -82,10 +80,9 @@
             // 
             ViewDetailsButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ViewDetailsButton.BackColor = Color.CornflowerBlue;
-            ViewDetailsButton.Location = new Point(898, 735);
-            ViewDetailsButton.Margin = new Padding(3, 4, 3, 4);
+            ViewDetailsButton.Location = new Point(786, 551);
             ViewDetailsButton.Name = "ViewDetailsButton";
-            ViewDetailsButton.Size = new Size(233, 60);
+            ViewDetailsButton.Size = new Size(204, 45);
             ViewDetailsButton.TabIndex = 5;
             ViewDetailsButton.Text = "View Details";
             ViewDetailsButton.UseVisualStyleBackColor = false;
@@ -95,10 +92,9 @@
             // 
             ExportDataCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ExportDataCheck.AutoSize = true;
-            ExportDataCheck.Location = new Point(768, 906);
-            ExportDataCheck.Margin = new Padding(3, 4, 3, 4);
+            ExportDataCheck.Location = new Point(681, 679);
             ExportDataCheck.Name = "ExportDataCheck";
-            ExportDataCheck.Size = new Size(110, 24);
+            ExportDataCheck.Size = new Size(87, 19);
             ExportDataCheck.TabIndex = 6;
             ExportDataCheck.Text = "Export Data";
             ExportDataCheck.UseVisualStyleBackColor = true;
@@ -106,20 +102,20 @@
             // ViewSearchTextBox
             // 
             ViewSearchTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            ViewSearchTextBox.Location = new Point(881, 200);
-            ViewSearchTextBox.Margin = new Padding(3, 4, 3, 4);
+            ViewSearchTextBox.Location = new Point(771, 150);
             ViewSearchTextBox.Name = "ViewSearchTextBox";
-            ViewSearchTextBox.Size = new Size(250, 27);
+            ViewSearchTextBox.Size = new Size(219, 23);
             ViewSearchTextBox.TabIndex = 7;
             ViewSearchTextBox.Text = "Input SKU or product name";
+            ViewSearchTextBox.TextChanged += ViewSearchTextBox_TextChanged;
             // 
             // ViewSearchLabel
             // 
             ViewSearchLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ViewSearchLabel.AutoSize = true;
-            ViewSearchLabel.Location = new Point(823, 204);
+            ViewSearchLabel.Location = new Point(720, 153);
             ViewSearchLabel.Name = "ViewSearchLabel";
-            ViewSearchLabel.Size = new Size(56, 20);
+            ViewSearchLabel.Size = new Size(45, 15);
             ViewSearchLabel.TabIndex = 8;
             ViewSearchLabel.Text = "Search:";
             // 
@@ -127,10 +123,9 @@
             // 
             ViewCancelButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             ViewCancelButton.BackColor = Color.FromArgb(255, 128, 128);
-            ViewCancelButton.Location = new Point(14, 877);
-            ViewCancelButton.Margin = new Padding(3, 4, 3, 4);
+            ViewCancelButton.Location = new Point(12, 658);
             ViewCancelButton.Name = "ViewCancelButton";
-            ViewCancelButton.Size = new Size(233, 60);
+            ViewCancelButton.Size = new Size(204, 45);
             ViewCancelButton.TabIndex = 9;
             ViewCancelButton.Text = "Cancel";
             ViewCancelButton.UseVisualStyleBackColor = false;
@@ -150,18 +145,17 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             ViewInventoryDataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             ViewInventoryDataTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ViewInventoryDataTable.Location = new Point(14, 232);
-            ViewInventoryDataTable.Margin = new Padding(3, 4, 3, 4);
+            ViewInventoryDataTable.Location = new Point(12, 174);
             ViewInventoryDataTable.Name = "ViewInventoryDataTable";
             ViewInventoryDataTable.RowHeadersWidth = 51;
-            ViewInventoryDataTable.Size = new Size(1118, 489);
+            ViewInventoryDataTable.Size = new Size(978, 367);
             ViewInventoryDataTable.TabIndex = 10;
             // 
             // ViewInventoryMain
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1145, 953);
+            ClientSize = new Size(1002, 715);
             Controls.Add(ViewInventoryDataTable);
             Controls.Add(ViewCancelButton);
             Controls.Add(ViewSearchLabel);
@@ -171,7 +165,6 @@
             Controls.Add(LocateButton);
             Controls.Add(ViewLastUpdatesButton);
             Controls.Add(ViewIMSLabel);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "ViewInventoryMain";
             Text = "View: Inventory Management System";
             ((System.ComponentModel.ISupportInitialize)ViewInventoryDataTable).EndInit();
