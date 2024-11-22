@@ -61,20 +61,28 @@ namespace ISDS454_IMS_Forms
 
         private void editDatagridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex>=0)
+            try
             {
-                editskuInput.Text = editDatagridView.SelectedRows[0].Cells[0].Value.ToString();
-                editwarehouseIDInput.Text = editDatagridView.SelectedRows[0].Cells[1].Value.ToString();
-                editNameInput.Text = editDatagridView.SelectedRows[0].Cells[2].Value.ToString();
-                editQuantityInput.Text = editDatagridView.SelectedRows[0].Cells[3].Value.ToString();
-                editLocationInput.Text = editDatagridView.SelectedRows[0].Cells[4].Value.ToString();
-                editDescriptionInput.Text = editDatagridView.SelectedRows[0].Cells[5].Value.ToString();
-                editExpirationDateInput.Text = editDatagridView.SelectedRows[0].Cells[6].Value.ToString();
-                editCategoryInput.Text = editDatagridView.SelectedRows[0].Cells[7].Value.ToString();
-                editSupplierInput.Text = editDatagridView.SelectedRows[0].Cells[8].Value.ToString();
-                editCostInput.Text = editDatagridView.SelectedRows[0].Cells[9].Value.ToString();
-                editSellingPriceInput.Text = editDatagridView.SelectedRows[0].Cells[10].Value.ToString();
+                if (e.RowIndex >= 0)
+                {
+                    editskuInput.Text = editDatagridView.SelectedRows[0].Cells[0].Value.ToString();
+                    editwarehouseIDInput.Text = editDatagridView.SelectedRows[0].Cells[1].Value.ToString();
+                    editNameInput.Text = editDatagridView.SelectedRows[0].Cells[2].Value.ToString();
+                    editQuantityInput.Text = editDatagridView.SelectedRows[0].Cells[3].Value.ToString();
+                    editLocationInput.Text = editDatagridView.SelectedRows[0].Cells[4].Value.ToString();
+                    editDescriptionInput.Text = editDatagridView.SelectedRows[0].Cells[5].Value.ToString();
+                    editExpirationDateInput.Text = editDatagridView.SelectedRows[0].Cells[6].Value.ToString();
+                    editCategoryInput.Text = editDatagridView.SelectedRows[0].Cells[7].Value.ToString();
+                    editSupplierInput.Text = editDatagridView.SelectedRows[0].Cells[8].Value.ToString();
+                    editCostInput.Text = editDatagridView.SelectedRows[0].Cells[9].Value.ToString();
+                    editSellingPriceInput.Text = editDatagridView.SelectedRows[0].Cells[10].Value.ToString();
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Click on a row to edit");
+            }
+
         }
     }
 }

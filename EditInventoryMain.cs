@@ -59,43 +59,51 @@ namespace ISDS454_IMS_Forms
 
         private void delButton_Click(object sender, EventArgs e)
         {
-            // Ensure a row is selected
-            if (EditInventoryDataTable.SelectedRows.Count > 0)
+            try
             {
-                // Get the primary key (e.g., "ID") from the selected row
-                string selectedItem = EditInventoryDataTable.SelectedRows[0].Cells["Name"].Value.ToString();
-
-                // Confirm deletion
-                var confirmResult = MessageBox.Show("Are you sure you want to delete this record?",
-                                                     "Confirm Delete",
-                                                     MessageBoxButtons.YesNo);
-                if (confirmResult == DialogResult.Yes)
+                // Ensure a row is selected
+                if (EditInventoryDataTable.SelectedRows.Count > 0)
                 {
-                    // Delete from the database
-                    DeleteRecordFromDatabase(selectedItem);
+                    // Get the primary key (e.g., "ID") from the selected row
+                    string selectedItem = EditInventoryDataTable.SelectedRows[0].Cells["inventory_sku"].Value.ToString();
 
-                    // Remove the row from the DataGridView
-                    EditInventoryDataTable.Rows.RemoveAt(EditInventoryDataTable.SelectedRows[0].Index);
-                    MessageBox.Show("Record deleted successfully!");
+                    // Confirm deletion
+                    var confirmResult = MessageBox.Show("Are you sure you want to delete this record?",
+                                                         "Confirm Delete",
+                                                         MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        // Delete from the database
+                        DeleteRecordFromDatabase(selectedItem);
+
+                        // Remove the row from the DataGridView
+                        EditInventoryDataTable.Rows.RemoveAt(EditInventoryDataTable.SelectedRows[0].Index);
+                        MessageBox.Show("Record deleted successfully!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a row to delete.");
                 }
             }
-            else
+            catch(Exception ex)
             {
                 MessageBox.Show("Please select a row to delete.");
             }
+
         }
 
-        private void DeleteRecordFromDatabase(string name)
+        private void DeleteRecordFromDatabase(string sku)
         {
             using (MySqlConnection conn = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=inventorydatabase"))
             {
                 try
                 {
                     conn.Open();
-                    string query = "DELETE FROM inventory WHERE item_name = @item_name";
+                    string query = "DELETE FROM inventory WHERE inventory_sku = @inventory_sku";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@item_name", name);
+                        cmd.Parameters.AddWithValue("@inventory_sku", sku);
                         cmd.ExecuteNonQuery();
                     }
                 }
