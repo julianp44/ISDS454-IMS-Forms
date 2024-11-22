@@ -36,5 +36,10 @@ namespace ISDS454_IMS_Forms
             ViewDetailsForm details = new ViewDetailsForm();
             details.Show();
         }
+
+        private void ViewLastUpdatesButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -4,7 +4,7 @@ namespace sqlConnectionTest
 {
     class DBconnect
     {
-        MySqlConnection connect = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=inventorydatabase");
+        MySqlConnection connect = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=inventorydatabase;Convert Zero Datetime=True");
 
         public MySqlConnection getconnection
         {

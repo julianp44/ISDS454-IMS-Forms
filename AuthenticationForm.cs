@@ -22,19 +22,19 @@ namespace ISDS454_IMS_Forms
         {
             this.Close(); //Closes the Authentication Page
         }
-        
+
         private void button1_Click(object sender, EventArgs e) //Login Button
         {
             string usernameInput = EmployeeIDInputBox.Text;
             string passwordInput = PasswordInputBox.Text;
 
             MySqlConnection connect = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=inventorydatabase");
-            string query = "SELECT * FROM employeeinfo WHERE employeeUsername = '" + usernameInput.Trim() + "' AND employeePassword = '" + passwordInput.Trim() + "'";
-           
+            string query = "SELECT * FROM employee WHERE employee_firstname = '" + usernameInput.Trim() + "' AND login_password = '" + passwordInput.Trim() + "'";
+
             MySqlDataAdapter sda = new MySqlDataAdapter(query, connect);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            
+
             if (dt.Rows.Count == 1)
             {
                 // Hide the current form
@@ -48,6 +48,11 @@ namespace ISDS454_IMS_Forms
             {
                 MessageBox.Show("Wrong username or password");
             }
+        }
+
+        private void EmployeeIDInputBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

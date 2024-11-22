@@ -14,7 +14,15 @@ namespace ISDS454_IMS_Forms
         DBconnect connect = new DBconnect();
         public DataTable getItemInformation()
         {
-            MySqlCommand command = new MySqlCommand("SELECT * FROM iteminformationfull", connect.getconnection);
+            MySqlCommand command = new MySqlCommand("SELECT * FROM inventory_view", connect.getconnection);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+        public DataTable getItemDetails()
+        {
+            MySqlCommand command = new MySqlCommand("SELECT * FROM inventory", connect.getconnection);
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -23,7 +31,7 @@ namespace ISDS454_IMS_Forms
 
         public DataTable getItemName()
         {
-            MySqlCommand cmd = new MySqlCommand("SELECT Name FROM iteminformationfull", connect.getconnection);
+            MySqlCommand cmd = new MySqlCommand("SELECT item_name AS Name FROM inventory", connect.getconnection);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataTable table = new DataTable();
             adapter.Fill(table);

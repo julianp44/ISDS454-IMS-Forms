@@ -43,7 +43,7 @@ namespace ISDS454_IMS_Forms
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
-            EditInventoryDataTable.DataSource = itemInfo.getItemInformation();
+            EditInventoryDataTable.DataSource = itemInfo.getItemDetails();
         }
 
         private void EditInventoryDataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -92,10 +92,10 @@ namespace ISDS454_IMS_Forms
                 try
                 {
                     conn.Open();
-                    string query = "DELETE FROM iteminformationfull WHERE NAME = @NAME";
+                    string query = "DELETE FROM inventory WHERE item_name = @item_name";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@NAME", name);
+                        cmd.Parameters.AddWithValue("@item_name", name);
                         cmd.ExecuteNonQuery();
                     }
                 }
