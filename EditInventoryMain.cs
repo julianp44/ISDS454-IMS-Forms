@@ -17,7 +17,7 @@ namespace ISDS454_IMS_Forms
         public EditInventoryMain()
         {
             InitializeComponent();
-            EditInventoryDataTable.DataSource = itemInfo.getItemInformation();
+            EditInventoryDataTable.DataSource = itemInfo.getItemDetails();
         }
 
         private void NextButton_Click(object sender, EventArgs e)

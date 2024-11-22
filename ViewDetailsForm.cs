@@ -16,7 +16,7 @@ namespace ISDS454_IMS_Forms
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            ViewItemDetailsDataTable.DataSource = itemDetails.getItemDetails();
+            ViewItemDetailsDataTable.DataSource = itemDetails.getItemInformation();
         }
 
         private void ViewDetailsForm_Load(object sender, EventArgs e)

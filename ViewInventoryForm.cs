@@ -18,7 +18,7 @@ namespace ISDS454_IMS_Forms
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            ViewInventoryDataTable.DataSource = itemInfo.getItemInformation();
+            ViewInventoryDataTable.DataSource = itemInfo.getItemDetails();
         }
 
         private void InventoryDataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
