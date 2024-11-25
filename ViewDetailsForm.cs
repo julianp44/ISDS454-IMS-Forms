@@ -1,4 +1,6 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,6 +34,11 @@ namespace ISDS454_IMS_Forms
         private void ItemDetailsCancelButton_Click(object sender, EventArgs e)
         {
             this.Close(); //Closes current details page.
+        }
+
+        private void ItemDetailsExportButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

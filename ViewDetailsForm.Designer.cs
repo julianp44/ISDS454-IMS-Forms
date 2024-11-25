@@ -68,6 +68,7 @@
             ItemDetailsExportButton.TabIndex = 2;
             ItemDetailsExportButton.Text = "Export";
             ItemDetailsExportButton.UseVisualStyleBackColor = false;
+            ItemDetailsExportButton.Click += ItemDetailsExportButton_Click;
             // 
             // ItemDetailsCancelButton
             // 

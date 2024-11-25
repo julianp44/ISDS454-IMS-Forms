@@ -31,9 +31,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             ViewIMSLabel = new Label();
             ViewLastUpdatesButton = new Button();
-            LocateButton = new Button();
             ViewDetailsButton = new Button();
-            ExportDataCheck = new CheckBox();
             ViewSearchTextBox = new TextBox();
             ViewSearchLabel = new Label();
             ViewCancelButton = new Button();
@@ -65,39 +63,17 @@
             ViewLastUpdatesButton.UseVisualStyleBackColor = false;
             ViewLastUpdatesButton.Click += ViewLastUpdatesButton_Click;
             // 
-            // LocateButton
-            // 
-            LocateButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            LocateButton.BackColor = Color.Coral;
-            LocateButton.Location = new Point(786, 602);
-            LocateButton.Name = "LocateButton";
-            LocateButton.Size = new Size(204, 45);
-            LocateButton.TabIndex = 4;
-            LocateButton.Text = "Locate";
-            LocateButton.UseVisualStyleBackColor = false;
-            // 
             // ViewDetailsButton
             // 
             ViewDetailsButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ViewDetailsButton.BackColor = Color.CornflowerBlue;
-            ViewDetailsButton.Location = new Point(786, 551);
+            ViewDetailsButton.Location = new Point(786, 602);
             ViewDetailsButton.Name = "ViewDetailsButton";
             ViewDetailsButton.Size = new Size(204, 45);
             ViewDetailsButton.TabIndex = 5;
             ViewDetailsButton.Text = "View Details";
             ViewDetailsButton.UseVisualStyleBackColor = false;
             ViewDetailsButton.Click += ViewDetailsButton_Click;
-            // 
-            // ExportDataCheck
-            // 
-            ExportDataCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            ExportDataCheck.AutoSize = true;
-            ExportDataCheck.Location = new Point(681, 679);
-            ExportDataCheck.Name = "ExportDataCheck";
-            ExportDataCheck.Size = new Size(87, 19);
-            ExportDataCheck.TabIndex = 6;
-            ExportDataCheck.Text = "Export Data";
-            ExportDataCheck.UseVisualStyleBackColor = true;
             // 
             // ViewSearchTextBox
             // 
@@ -159,9 +135,7 @@
             Controls.Add(ViewCancelButton);
             Controls.Add(ViewSearchLabel);
             Controls.Add(ViewSearchTextBox);
-            Controls.Add(ExportDataCheck);
             Controls.Add(ViewDetailsButton);
-            Controls.Add(LocateButton);
             Controls.Add(ViewLastUpdatesButton);
             Controls.Add(ViewIMSLabel);
             Name = "ViewInventoryMain";
@@ -175,9 +149,7 @@
 
         private Label ViewIMSLabel;
         private Button ViewLastUpdatesButton;
-        private Button LocateButton;
         private Button ViewDetailsButton;
-        private CheckBox ExportDataCheck;
         private TextBox ViewSearchTextBox;
         private Label ViewSearchLabel;
         private Button ViewCancelButton;

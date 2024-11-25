@@ -100,7 +100,6 @@
             editCategoryInput.Name = "editCategoryInput";
             editCategoryInput.Size = new Size(211, 23);
             editCategoryInput.TabIndex = 43;
-            editCategoryInput.Text = "Enter Items category";
             // 
             // editSellingPriceInput
             // 
@@ -109,7 +108,6 @@
             editSellingPriceInput.Name = "editSellingPriceInput";
             editSellingPriceInput.Size = new Size(211, 23);
             editSellingPriceInput.TabIndex = 42;
-            editSellingPriceInput.Text = "Enter items selling price per unit";
             // 
             // editSellingPriceLabel
             // 
@@ -130,7 +128,6 @@
             editCostInput.Name = "editCostInput";
             editCostInput.Size = new Size(211, 23);
             editCostInput.TabIndex = 40;
-            editCostInput.Text = "Enter item cost per unit";
             // 
             // editSupplierInput
             // 
@@ -139,7 +136,6 @@
             editSupplierInput.Name = "editSupplierInput";
             editSupplierInput.Size = new Size(211, 23);
             editSupplierInput.TabIndex = 39;
-            editSupplierInput.Text = "Enter the name of the items supplier";
             // 
             // editExpirationDateInput
             // 
@@ -148,7 +144,6 @@
             editExpirationDateInput.Name = "editExpirationDateInput";
             editExpirationDateInput.Size = new Size(211, 23);
             editExpirationDateInput.TabIndex = 38;
-            editExpirationDateInput.Text = "Enter item expiration date if applicable";
             // 
             // editDescriptionInput
             // 
@@ -157,7 +152,6 @@
             editDescriptionInput.Name = "editDescriptionInput";
             editDescriptionInput.Size = new Size(211, 23);
             editDescriptionInput.TabIndex = 37;
-            editDescriptionInput.Text = "Enter item description";
             // 
             // editLocationInput
             // 
@@ -166,7 +160,6 @@
             editLocationInput.Name = "editLocationInput";
             editLocationInput.Size = new Size(211, 23);
             editLocationInput.TabIndex = 36;
-            editLocationInput.Text = "Enter item location";
             // 
             // editQuantityInput
             // 
@@ -175,7 +168,6 @@
             editQuantityInput.Name = "editQuantityInput";
             editQuantityInput.Size = new Size(211, 23);
             editQuantityInput.TabIndex = 35;
-            editQuantityInput.Text = "Enter item quantity";
             // 
             // editCostLabel
             // 
@@ -280,7 +272,6 @@
             editNameInput.Name = "editNameInput";
             editNameInput.Size = new Size(211, 23);
             editNameInput.TabIndex = 26;
-            editNameInput.Text = "Enter item name";
             // 
             // editItemCancelButton
             // 

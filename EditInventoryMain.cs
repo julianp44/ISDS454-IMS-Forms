@@ -65,7 +65,7 @@ namespace ISDS454_IMS_Forms
                 if (EditInventoryDataTable.SelectedRows.Count > 0)
                 {
                     // Get the primary key (e.g., "ID") from the selected row
-                    string selectedItem = EditInventoryDataTable.SelectedRows[0].Cells["inventory_sku"].Value.ToString();
+                    string selectedItem = EditInventoryDataTable.SelectedRows[0].Cells["SKU"].Value.ToString();
 
                     // Confirm deletion
                     var confirmResult = MessageBox.Show("Are you sure you want to delete this record?",
@@ -88,7 +88,7 @@ namespace ISDS454_IMS_Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Please select a row to delete.");
+                MessageBox.Show("Please select a row to delete." + MessageBox.Show(ex.Message));
             }
 
         }
@@ -128,8 +128,8 @@ namespace ISDS454_IMS_Forms
                     conn.Open();
 
                     string query = string.IsNullOrEmpty(searchQuery)
-                        ? "SELECT inventory_sku, warehouse_id, item_name, item_quantity, item_location FROM inventory;"
-                        : "SELECT inventory_sku, warehouse_id, item_name, item_quantity, item_location FROM inventory WHERE inventory_sku LIKE @Search OR item_name LIKE @Search;";
+                        ? "SELECT inventory_sku AS SKU, warehouse_id AS Warehouse, item_name AS Name, item_quantity AS Quantity, item_location AS Location FROM inventory;"
+                        : "SELECT inventory_sku AS SKU, warehouse_id AS Warehouse, item_name AS Name, item_quantity AS Quantity, item_location AS Location FROM inventory WHERE inventory_sku LIKE @Search OR item_name LIKE @Search;";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {

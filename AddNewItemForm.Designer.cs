@@ -74,7 +74,6 @@
             NameInput.Name = "NameInput";
             NameInput.Size = new Size(560, 23);
             NameInput.TabIndex = 1;
-            NameInput.Text = "Enter item name";
             NameInput.TextChanged += NameInput_TextChanged;
             // 
             // ItemNameLabel
@@ -181,7 +180,6 @@
             QuantityInput.Name = "QuantityInput";
             QuantityInput.Size = new Size(560, 23);
             QuantityInput.TabIndex = 10;
-            QuantityInput.Text = "Enter item quantity";
             // 
             // LocationInput
             // 
@@ -190,7 +188,6 @@
             LocationInput.Name = "LocationInput";
             LocationInput.Size = new Size(560, 23);
             LocationInput.TabIndex = 11;
-            LocationInput.Text = "Enter item location";
             // 
             // DescriptionInput
             // 
@@ -199,7 +196,6 @@
             DescriptionInput.Name = "DescriptionInput";
             DescriptionInput.Size = new Size(560, 23);
             DescriptionInput.TabIndex = 12;
-            DescriptionInput.Text = "Enter item description";
             // 
             // ExpirationDateInput
             // 
@@ -208,7 +204,6 @@
             ExpirationDateInput.Name = "ExpirationDateInput";
             ExpirationDateInput.Size = new Size(560, 23);
             ExpirationDateInput.TabIndex = 13;
-            ExpirationDateInput.Text = "Enter item expiration date if applicable";
             // 
             // SupplierInput
             // 
@@ -217,7 +212,6 @@
             SupplierInput.Name = "SupplierInput";
             SupplierInput.Size = new Size(560, 23);
             SupplierInput.TabIndex = 15;
-            SupplierInput.Text = "Enter the name of the items supplier";
             // 
             // CostInput
             // 
@@ -226,7 +220,6 @@
             CostInput.Name = "CostInput";
             CostInput.Size = new Size(560, 23);
             CostInput.TabIndex = 16;
-            CostInput.Text = "Enter item cost per unit";
             // 
             // SellingPriceLabel
             // 
@@ -247,7 +240,6 @@
             SellingPriceInput.Name = "SellingPriceInput";
             SellingPriceInput.Size = new Size(560, 23);
             SellingPriceInput.TabIndex = 18;
-            SellingPriceInput.Text = "Enter items selling price per unit";
             // 
             // CategoryInput
             // 
@@ -256,7 +248,6 @@
             CategoryInput.Name = "CategoryInput";
             CategoryInput.Size = new Size(560, 23);
             CategoryInput.TabIndex = 19;
-            CategoryInput.Text = "Enter Items category";
             // 
             // NewItemCancelButton
             // 
@@ -289,7 +280,6 @@
             skuInput.Name = "skuInput";
             skuInput.Size = new Size(560, 23);
             skuInput.TabIndex = 22;
-            skuInput.Text = "Enter item name";
             skuInput.TextChanged += skuInput_TextChanged;
             // 
             // warehouseIDLabel

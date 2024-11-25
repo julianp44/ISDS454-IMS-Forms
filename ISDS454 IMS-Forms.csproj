@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="iTextSharp" Version="5.5.13.4" />
     <PackageReference Include="Microsoft.ReportViewer.Common" Version="10.0.40219.1" />
     <PackageReference Include="MySql.Data" Version="9.1.0" />
     <PackageReference Include="NuGet.Frameworks" Version="6.11.1" />

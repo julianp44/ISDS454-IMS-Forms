@@ -114,7 +114,6 @@
             EditSearchTextBox.Name = "EditSearchTextBox";
             EditSearchTextBox.Size = new Size(219, 25);
             EditSearchTextBox.TabIndex = 9;
-            EditSearchTextBox.Text = "Input SKU or product name";
             EditSearchTextBox.TextChanged += EditSearchTextBox_TextChanged;
             // 
             // addNewInventoryButton
