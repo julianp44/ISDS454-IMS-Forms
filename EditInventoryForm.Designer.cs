@@ -31,7 +31,6 @@
             EditItemLabel = new Label();
             editskuLabel = new Label();
             editwarehouseIDLabel = new Label();
-            editskuInput = new TextBox();
             editCategoryInput = new TextBox();
             editSellingPriceInput = new TextBox();
             editSellingPriceLabel = new Label();
@@ -54,6 +53,7 @@
             editItemConfirmButton = new Button();
             editDatagridView = new DataGridView();
             editWarehouseIDComboBox = new ComboBox();
+            labeleditsku = new Label();
             ((System.ComponentModel.ISupportInitialize)editDatagridView).BeginInit();
             SuspendLayout();
             // 
@@ -92,15 +92,6 @@
             editwarehouseIDLabel.TabIndex = 46;
             editwarehouseIDLabel.Text = "Warehouse ID:";
             editwarehouseIDLabel.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // editskuInput
-            // 
-            editskuInput.Anchor = AnchorStyles.None;
-            editskuInput.Location = new Point(1099, 91);
-            editskuInput.Name = "editskuInput";
-            editskuInput.Size = new Size(211, 23);
-            editskuInput.TabIndex = 44;
-            editskuInput.Text = "Enter item name";
             // 
             // editCategoryInput
             // 
@@ -334,18 +325,26 @@
             editWarehouseIDComboBox.Size = new Size(121, 23);
             editWarehouseIDComboBox.TabIndex = 51;
             // 
+            // labeleditsku
+            // 
+            labeleditsku.AutoSize = true;
+            labeleditsku.Location = new Point(1099, 97);
+            labeleditsku.Name = "labeleditsku";
+            labeleditsku.Size = new Size(0, 15);
+            labeleditsku.TabIndex = 52;
+            // 
             // EditInventoryForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1344, 706);
+            Controls.Add(labeleditsku);
             Controls.Add(editWarehouseIDComboBox);
             Controls.Add(editDatagridView);
             Controls.Add(editItemConfirmButton);
             Controls.Add(editItemCancelButton);
             Controls.Add(editskuLabel);
             Controls.Add(editwarehouseIDLabel);
-            Controls.Add(editskuInput);
             Controls.Add(editCategoryInput);
             Controls.Add(editSellingPriceInput);
             Controls.Add(editSellingPriceLabel);
@@ -378,7 +377,6 @@
         private Label EditItemLabel;
         private Label editskuLabel;
         private Label editwarehouseIDLabel;
-        private TextBox editskuInput;
         private TextBox editCategoryInput;
         private TextBox editSellingPriceInput;
         private Label editSellingPriceLabel;
@@ -401,5 +399,6 @@
         private Button editItemConfirmButton;
         private DataGridView editDatagridView;
         private ComboBox editWarehouseIDComboBox;
+        private Label labeleditsku;
     }
 }

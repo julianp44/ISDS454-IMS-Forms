@@ -64,7 +64,7 @@ namespace ISDS454_IMS_Forms
             }
             catch (Exception)
             {
-                MessageBox.Show("Invalid warehouse ID");
+                MessageBox.Show("SKU already exists");
             }
         }
         private void AddNewItemForm_Load(object sender, EventArgs e)

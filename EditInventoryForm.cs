@@ -37,7 +37,7 @@ namespace ISDS454_IMS_Forms
         {
             connect.openConnnect();
 
-            string updateQuery = "UPDATE inventory SET warehouse_id = '" + editWarehouseIDComboBox.Text + "',item_name = '" + editNameInput.Text + "', item_quantity = '" + editQuantityInput.Text + "', item_location = '" + editLocationInput.Text + "', item_description = '" + editDescriptionInput.Text + "', item_expirationdate = '" + editExpirationDateInput.Text + "', inventory_type = '" + editCategoryInput.Text + "', supplier_info = '" + editSupplierInput.Text + "', cost_per_unit = '" + double.Parse(editCostInput.Text) + "', sellingprice_per_unit = '" + double.Parse(editSellingPriceInput.Text) + "'WHERE inventory_sku = '"+editskuInput.Text+"'";
+            string updateQuery = "UPDATE inventory SET warehouse_id = '" + editWarehouseIDComboBox.Text + "',item_name = '" + editNameInput.Text + "', item_quantity = '" + editQuantityInput.Text + "', item_location = '" + editLocationInput.Text + "', item_description = '" + editDescriptionInput.Text + "', item_expirationdate = '" + editExpirationDateInput.Text + "', inventory_type = '" + editCategoryInput.Text + "', supplier_info = '" + editSupplierInput.Text + "', cost_per_unit = '" + double.Parse(editCostInput.Text) + "', sellingprice_per_unit = '" + double.Parse(editSellingPriceInput.Text) + "'WHERE inventory_sku = '"+labeleditsku.Text+"'";
 
 
             try
@@ -66,7 +66,7 @@ namespace ISDS454_IMS_Forms
             {
                 if (e.RowIndex >= 0)
                 {
-                    editskuInput.Text = editDatagridView.SelectedRows[0].Cells[0].Value.ToString();
+                    labeleditsku.Text = editDatagridView.SelectedRows[0].Cells[0].Value.ToString();
                     editWarehouseIDComboBox.Text = editDatagridView.SelectedRows[0].Cells[1].Value.ToString();
                     editNameInput.Text = editDatagridView.SelectedRows[0].Cells[2].Value.ToString();
                     editQuantityInput.Text = editDatagridView.SelectedRows[0].Cells[3].Value.ToString();

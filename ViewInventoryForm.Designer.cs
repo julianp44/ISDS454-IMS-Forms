@@ -106,7 +106,6 @@
             ViewSearchTextBox.Name = "ViewSearchTextBox";
             ViewSearchTextBox.Size = new Size(219, 23);
             ViewSearchTextBox.TabIndex = 7;
-            ViewSearchTextBox.Text = "Input SKU or product name";
             ViewSearchTextBox.TextChanged += ViewSearchTextBox_TextChanged;
             // 
             // ViewSearchLabel
