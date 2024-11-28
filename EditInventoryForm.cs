@@ -25,7 +25,9 @@ namespace ISDS454_IMS_Forms
 
         private void editItemCancelButton_Click(object sender, EventArgs e)
         {
+            EditInventoryMain df = new EditInventoryMain();
             this.Close();
+            df.Show();
         }
 
         private void editDatagridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -21,7 +21,7 @@ namespace ISDS454_IMS_Forms
         {
             // Create an instance of EditInventoryForm
             EditInventoryMain editInventoryMain = new EditInventoryMain();
-
+            this.Close();
             // Show the EditInventoryForm
             editInventoryMain.Show();
         }
@@ -30,7 +30,7 @@ namespace ISDS454_IMS_Forms
         {
             // Create an instance of ViewInventoryForm
             ViewInventoryMain viewInventoryMain = new ViewInventoryMain();
-
+            this.Close();
             // Show the ViewInventoryForm
             viewInventoryMain.Show();
         }

@@ -28,7 +28,9 @@ namespace ISDS454_IMS_Forms
 
         private void NewItemCancelButton_Click(object sender, EventArgs e)
         {
+            EditInventoryMain df = new EditInventoryMain(); 
             this.Close(); //cancels add new item and closes menu
+            df.Show();
         }
 
         private void AddItemConfirmButton_Click(object sender, EventArgs e)
@@ -62,7 +64,7 @@ namespace ISDS454_IMS_Forms
                 connect.Close();
                 MessageBox.Show("add item successful");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("SKU already exists");
             }

@@ -27,7 +27,9 @@ namespace ISDS454_IMS_Forms
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            MainMenuForm df = new MainMenuForm();
             this.Close();//closes this page leaving the Main Menu visible
+            df.Show();
         }
 
         private void AddItemButton_Click(object sender, EventArgs e)
@@ -37,6 +39,7 @@ namespace ISDS454_IMS_Forms
 
         private void addNewInventoryButton_Click(object sender, EventArgs e)
         {
+            this.Close();
             AddNewItemForm frm = new AddNewItemForm();
             frm.Show();
         }
@@ -53,6 +56,7 @@ namespace ISDS454_IMS_Forms
 
         private void editButton_Click(object sender, EventArgs e)
         {
+            this.Close();
             EditInventoryForm frm = new EditInventoryForm();
             frm.Show();
         }

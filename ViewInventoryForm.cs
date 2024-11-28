@@ -28,12 +28,15 @@ namespace ISDS454_IMS_Forms
 
         private void ViewCancelButton_Click(object sender, EventArgs e)
         {
+            MainMenuForm df = new MainMenuForm();
             this.Close();   //Closes this window leaving the Main Menu visible
+            df.Show();
         }
 
         private void ViewDetailsButton_Click(object sender, EventArgs e)
         {
             ViewDetailsForm details = new ViewDetailsForm();
+            this.Close();
             details.Show();
         }
 
