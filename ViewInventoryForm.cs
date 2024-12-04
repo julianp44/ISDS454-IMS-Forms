@@ -21,11 +21,6 @@ namespace ISDS454_IMS_Forms
             ViewInventoryDataTable.DataSource = itemInfo.getItemDetails();
         }
 
-        private void InventoryDataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void ViewCancelButton_Click(object sender, EventArgs e)
         {
             MainMenuForm df = new MainMenuForm();
@@ -42,7 +37,9 @@ namespace ISDS454_IMS_Forms
 
         private void ViewLastUpdatesButton_Click(object sender, EventArgs e)
         {
-
+            ViewLastUpdatesForm viewLastUpdates = new ViewLastUpdatesForm();
+            this.Close();
+            viewLastUpdates.Show();
         }
 
         private void LoadData(string searchQuery)
@@ -83,6 +80,16 @@ namespace ISDS454_IMS_Forms
         {
             string searchText = ViewSearchTextBox.Text.Trim();
             LoadData(searchText);
+        }
+
+        private void ViewInventoryDataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ViewInventoryDataTable_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
