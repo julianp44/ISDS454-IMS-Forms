@@ -123,6 +123,7 @@
             ViewInventoryDataTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ViewInventoryDataTable.Location = new Point(12, 174);
             ViewInventoryDataTable.Name = "ViewInventoryDataTable";
+            ViewInventoryDataTable.ReadOnly = true;
             ViewInventoryDataTable.RowHeadersWidth = 51;
             ViewInventoryDataTable.Size = new Size(978, 367);
             ViewInventoryDataTable.TabIndex = 10;
