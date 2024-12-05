@@ -19,6 +19,7 @@ namespace ISDS454_IMS_Forms
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             ViewInventoryDataTable.DataSource = itemInfo.getItemDetails();
+            LoadComboBox();
         }
 
         private void ViewCancelButton_Click(object sender, EventArgs e)
@@ -76,6 +77,40 @@ namespace ISDS454_IMS_Forms
             }
         }
 
+        private void LoadDataCategory(string searchQuery)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=inventorydatabase;Convert Zero Datetime=True"))
+                {
+                    conn.Open();
+
+                    string query = string.IsNullOrEmpty(searchQuery)
+                        ? "SELECT inventory_sku AS SKU, warehouse_id AS Warehouse, item_name AS Name, item_quantity AS Quantity, item_location AS Location FROM inventory;"
+                        : "SELECT inventory_sku AS SKU, warehouse_id AS Warehouse, item_name AS Name, item_quantity AS Quantity, item_location AS Location FROM inventory WHERE inventory_type LIKE @Search OR item_name LIKE @Search;";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        if (!string.IsNullOrEmpty(searchQuery))
+                        {
+                            cmd.Parameters.AddWithValue("@Search", "%" + searchQuery + "%");
+                        }
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            ViewInventoryDataTable.DataSource = dt;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
         private void ViewSearchTextBox_TextChanged(object sender, EventArgs e)
         {
             string searchText = ViewSearchTextBox.Text.Trim();
@@ -90,6 +125,45 @@ namespace ISDS454_IMS_Forms
         private void ViewInventoryDataTable_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void LoadComboBox()
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=inventorydatabase"))
+                {
+                    // Open the connection
+                    connection.Open();
+
+                    // Define your query
+                    string query = "SELECT DISTINCT inventory_type FROM inventory";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Execute the query and read the results
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                // Add each item to the ComboBox
+                                viewInventoryComboBox.Items.Add(reader["inventory_type"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void viewInventoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string categoryText = viewInventoryComboBox.Text.Trim();
+            LoadDataCategory(categoryText);
         }
     }
 }
