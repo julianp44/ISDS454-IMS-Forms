@@ -54,9 +54,9 @@
             ViewItemDetailsDataTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ViewItemDetailsDataTable.Location = new Point(12, 74);
             ViewItemDetailsDataTable.Name = "ViewItemDetailsDataTable";
+            ViewItemDetailsDataTable.ReadOnly = true;
             ViewItemDetailsDataTable.Size = new Size(1501, 479);
             ViewItemDetailsDataTable.TabIndex = 1;
-            //ViewItemDetailsDataTable.CellContentClick += dataGridView1_CellContentClick;
             // 
             // ItemDetailsExportButton
             // 
