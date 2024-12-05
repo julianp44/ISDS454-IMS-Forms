@@ -23,8 +23,8 @@ namespace ISDS454_IMS_Forms
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             ViewLastUpdatesLabel = new Label();
             ViewLogInformationDataTable = new DataGridView();
             ViewLastUpdatesCancelButton = new Button();
@@ -36,7 +36,7 @@ namespace ISDS454_IMS_Forms
             ViewLastUpdatesLabel.AutoSize = true;
             ViewLastUpdatesLabel.Location = new Point(371, 9);
             ViewLastUpdatesLabel.Name = "ViewLastUpdatesLabel";
-            ViewLastUpdatesLabel.Size = new Size(388, 54);
+            ViewLastUpdatesLabel.Size = new Size(308, 45);
             ViewLastUpdatesLabel.TabIndex = 0;
             ViewLastUpdatesLabel.Text = "View: Last Updated";
             ViewLastUpdatesLabel.Click += label1_Click;
@@ -46,25 +46,26 @@ namespace ISDS454_IMS_Forms
             ViewLogInformationDataTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ViewLogInformationDataTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ViewLogInformationDataTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = SystemColors.Control;
-            dataGridViewCellStyle15.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            dataGridViewCellStyle15.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
-            ViewLogInformationDataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            ViewLogInformationDataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             ViewLogInformationDataTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ViewLogInformationDataTable.Location = new Point(14, 232);
             ViewLogInformationDataTable.Name = "ViewLogInformationDataTable";
-            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = SystemColors.Control;
-            dataGridViewCellStyle16.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            dataGridViewCellStyle16.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
-            ViewLogInformationDataTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            ViewLogInformationDataTable.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            ViewLogInformationDataTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             ViewLogInformationDataTable.RowHeadersWidth = 51;
             ViewLogInformationDataTable.Size = new Size(1118, 489);
             ViewLogInformationDataTable.TabIndex = 10;
