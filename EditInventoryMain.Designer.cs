@@ -91,6 +91,7 @@
             EditInventoryDataTable.DefaultCellStyle = dataGridViewCellStyle2;
             EditInventoryDataTable.Location = new Point(12, 174);
             EditInventoryDataTable.Name = "EditInventoryDataTable";
+            EditInventoryDataTable.ReadOnly = true;
             EditInventoryDataTable.Size = new Size(1047, 256);
             EditInventoryDataTable.TabIndex = 7;
             EditInventoryDataTable.CellContentClick += EditInventoryDataTable_CellContentClick;
