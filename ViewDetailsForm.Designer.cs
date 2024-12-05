@@ -56,7 +56,7 @@
             ViewItemDetailsDataTable.Name = "ViewItemDetailsDataTable";
             ViewItemDetailsDataTable.Size = new Size(1501, 479);
             ViewItemDetailsDataTable.TabIndex = 1;
-            ViewItemDetailsDataTable.CellContentClick += dataGridView1_CellContentClick;
+            //ViewItemDetailsDataTable.CellContentClick += dataGridView1_CellContentClick;
             // 
             // ItemDetailsExportButton
             // 
