@@ -39,14 +39,31 @@ CREATE TABLE `employee` (
 -- Dumping data for table `employee`
 --
 
+
 INSERT INTO `employee` (`employee_id`, `warehouse_id`, `employee_firstname`, `employee_lastname`, `login_password`) VALUES
-('11111111', '001', 'admin', NULL, 'password'),
-('22222222', '001', 'Adrian', 'Cruz', 'password'),
-('33333333', '001', 'Linda', 'Huynh', 'password'),
-('44444444', '001', 'Donna ', 'Nguyen', 'password'),
-('55555555', '002', 'Anthony', 'Nava', 'password'),
-('66666666', '002', 'Chris', 'Nguyen', 'password'),
-('77777777', '002', 'Julian', 'Posadas', 'password');
+-- Warehouse 001
+('EMP00001', '001', 'admin', NULL, 'password'),
+('EMP00002', '001', 'Adrian', 'Cruz', 'password'),
+('EMP00003', '001', 'Linda', 'Huynh', 'password'),
+('EMP00004', '001', 'Donna', 'Nguyen', 'password'),
+('EMP00005', '001', 'Anthony', 'Nava', 'password'),
+('EMP00006', '001', 'Chris', 'Nguyen', 'password'),
+('EMP00007', '001', 'Julian', 'Posadas', 'password'),
+
+-- Warehouse 002
+('EMP00008', '002', 'Maria', 'Wilson', 'P8bZ1qRf'),
+('EMP00009', '002', 'James', 'Moore', 'M7dF3lVq'),
+('EMP00010', '002', 'Isabella', 'Taylor', 'S6zJ2yXv'),
+('EMP00011', '002', 'Ethan', 'Lee', 'N5oW8kRr'),
+('EMP00012', '002', 'Charlotte', 'Kim', 'Q9pD2yZx'),
+
+-- Warehouse 003
+('EMP00013', '003', 'Oliver', 'Brown', 'C0zK3tN8'),
+('EMP00014', '003', 'Amelia', 'Martinez', 'H7uP1wJ9'),
+('EMP00015', '003', 'Lucas', 'Rodriguez', 'T2sX4vP7'),
+('EMP00016', '003', 'Mason', 'Perez', 'B6aM3jY8'),
+('EMP00017', '003', 'Sophie', 'Taylor', 'D1eV9uZ4');
+
 
 -- --------------------------------------------------------
 
@@ -90,9 +107,27 @@ CREATE TABLE `inventory` (
 --
 
 INSERT INTO `inventory` (`inventory_sku`, `warehouse_id`, `item_name`, `item_quantity`, `item_location`, `item_description`, `item_expirationdate`, `inventory_type`, `supplier_info`, `cost_per_unit`, `sellingprice_per_unit`, `users_review`) VALUES
-('112874387338475', '002', 'Copper', 30, 'Rack 8, Bin 1', 'Copper, 5 lbs/unit', '2024-11-29', 'Raw Material', 'Copper Supply Co.', 5, 20, 9),
-('123456789101101', '001', 'Silver', 60, 'Rack 5, Bin 2', 'Silver, 5 lbs/unit', '2024-11-28', 'Raw Material', 'Silver Palace Inc.', 20, 50, 8),
-('123456869793432', '001', 'Wood Pallet', 200, 'Rack 20, Bin 5', '1 Wooden Pallet/Unit', '0000-00-00', 'Raw Material', 'Lumber Supply Co', 5, 10, NULL);
+-- Warehouse 001 (Computer Parts & Components)
+('987654321234567', '001', 'Motherboard', 100, 'Rack 1, Bin 1', 'ASUS Z590 motherboard, ATX size', '2025-12-31', 'Computer Part', 'ASUS Technologies', 150, 250, 10),
+('876543210987654', '001', 'CPU', 150, 'Rack 2, Bin 3', 'Intel i7-12700K 8-core processor', '2025-06-30', 'Computer Part', 'Intel Corporation', 300, 450, 9),
+('765432109876543', '001', 'RAM', 200, 'Rack 3, Bin 2', 'Corsair Vengeance 16GB DDR4', '2025-05-01', 'Computer Part', 'Corsair', 80, 130, 8),
+('654321098765432', '001', 'SSD', 180, 'Rack 4, Bin 4', 'Samsung 970 EVO 1TB NVMe SSD', '2025-12-15', 'Computer Part', 'Samsung Electronics', 100, 150, 9),
+('543210987654321', '001', 'Graphics Card', 50, 'Rack 6, Bin 1', 'NVIDIA RTX 3080 10GB', '2025-08-20', 'Computer Part', 'NVIDIA Corporation', 700, 1000, 9),
+('432109876543210', '001', 'Power Supply', 120, 'Rack 7, Bin 3', 'EVGA SuperNOVA 850W 80+ Gold', '2025-07-01', 'Computer Part', 'EVGA Corporation', 100, 180, 8),
+('321098765432109', '001', 'Cooling Fan', 250, 'Rack 8, Bin 5', 'Cooler Master Hyper 212', '2025-11-01', 'Computer Part', 'Cooler Master', 40, 60, 7),
+
+-- Warehouse 002 (Accessories & Assemblies)
+('210987654321098', '002', 'Keyboard', 500, 'Rack 10, Bin 2', 'Mechanical Keyboard, RGB backlit', '2026-01-01', 'Accessory', 'Logitech Inc.', 50, 90, 8),
+('109876543210987', '002', 'Mouse', 600, 'Rack 11, Bin 4', 'Wireless Mouse, 1600 DPI', '2026-01-15', 'Accessory', 'Razer Inc.', 30, 60, 9),
+('987654321098765', '002', 'Monitor', 100, 'Rack 12, Bin 1', '27-inch 4K Display', '2025-12-01', 'Accessory', 'Dell Technologies', 300, 450, 9),
+('876543210887654', '002', 'Chassis', 150, 'Rack 13, Bin 3', 'Mid Tower Case with Tempered Glass', '2025-05-20', 'Accessory', 'NZXT Inc.', 70, 120, 8),
+
+-- Warehouse 003 (Raw Materials & Manufacturing Supplies)
+('765430109876543', '003', 'Aluminum Frame', 1000, 'Rack 15, Bin 1', 'Aluminum frame for computer chassis', '2025-04-30', 'Raw Material', 'Metal Supply Co.', 10, 30, NULL),
+('654321099765432', '003', 'Plastic Shell', 1500, 'Rack 16, Bin 3', 'Plastic outer shell for computer cases', '2025-09-30', 'Raw Material', 'PlasticWorks Inc.', 5, 15, NULL),
+('543210997654321', '003', 'Wires and Cables', 5000, 'Rack 17, Bin 2', 'Electrical wires, 10m each', '2025-12-31', 'Raw Material', 'Cable Supplies Ltd.', 2, 5, NULL),
+('432179876543210', '003', 'Screws and Nuts', 3000, 'Rack 18, Bin 4', 'Metal screws and nuts for assembly', '2025-10-31', 'Raw Material', 'Fasteners Co.', 1, 3, NULL),
+('321098365432109', '003', 'Heat Sink', 500, 'Rack 19, Bin 5', 'Copper heat sink for CPU cooling', '2025-07-30', 'Raw Material', 'Cooling Tech Inc.', 20, 50, NULL);
 
 -- --------------------------------------------------------
 
@@ -126,7 +161,9 @@ CREATE TABLE `warehouse` (
 
 INSERT INTO `warehouse` (`warehouse_id`, `warehouse_address`, `warehouse_phone`) VALUES
 ('001', '800 N State College Blvd, Fullerton, CA 92831', '951-123-1234'),
-('002', '1600 Holloway Ave, San Francisco, CA 94132', '951-134-2329');
+('002', '1600 Holloway Ave, San Francisco, CA 94132', '951-134-2329'),
+('003', '1234 Main St, Los Angeles, CA 90001', '951-145-4567');
+
 
 -- --------------------------------------------------------
 
