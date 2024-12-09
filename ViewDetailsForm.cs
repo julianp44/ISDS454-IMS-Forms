@@ -12,80 +12,101 @@ namespace ISDS454_IMS_Forms
 {
     public partial class ViewDetailsForm : Form
     {
-        // This is the class that handles displaying and exporting item details.
+        private string sku;
+        private string warehouse;
+        private string name;
+        private string quantity;
+        private string location;
+
+        // This is the object that handles showing the item details and exporting them.
         DisplayItemInformation itemDetails = new DisplayItemInformation();
 
-        public ViewDetailsForm()
+        public ViewDetailsForm(string sku, string warehouse, string name, string quantity, string location)
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen; // Makes the form open in the middle of the screen.
-            ViewItemDetailsDataTable.DataSource = itemDetails.getItemInformation(); // Load item info into the data grid.
+            this.StartPosition = FormStartPosition.CenterScreen; // Makes sure the form opens in the center.
+
+            // Assign the passed-in data to local variables.
+            this.sku = sku;
+            this.warehouse = warehouse;
+            this.name = name;
+            this.quantity = quantity;
+            this.location = location;
+
+            // Display the item details in the data grid view.
+            ViewItemDetailsDataTable.DataSource = getItemInformation(sku);
         }
 
         private void ViewDetailsForm_Load(object sender, EventArgs e)
         {
-            // Nothing to do here for now, but we might add stuff later.
+            // Currently nothing to do here, but maybe we'll add some stuff later.
         }
 
         private void ItemDetailsCancelButton_Click(object sender, EventArgs e)
         {
-            // Close this form and reopen the main inventory view.
+            // Close this form and go back to the main inventory view.
             this.Close();
             ViewInventoryMain df = new ViewInventoryMain();
             df.Show();
         }
 
-        // This connects to the database. Reusable for queries.
+        // This is the object that connects to the database. It's used for running queries.
         DBconnect connect = new DBconnect();
 
-        // This method gets all item details from the database and puts them in a DataTable.
-        public DataTable getItemInformation()
+        // This method gets all the item info from the database and puts it in a DataTable.
+        public DataTable getItemInformation(string sku)
         {
-            // SQL query to fetch all the inventory details. Adjust the column names if needed.
-            MySqlCommand command = new MySqlCommand("SELECT inventory_sku AS SKU, warehouse_id AS Warehouse, item_name AS Name, item_quantity AS Quantity, item_location AS Location, item_description AS Description, item_expirationdate AS Expiration, inventory_type AS Category, supplier_info AS Supplier, cost_per_unit AS Cost, sellingprice_per_unit AS Price FROM inventory", connect.getconnection);
+            // SQL query to grab item info based on the passed SKU.
+            MySqlCommand command = new MySqlCommand(
+                "SELECT inventory_sku AS SKU, warehouse_id AS Warehouse, item_name AS Name, item_quantity AS Quantity, item_location AS Location, item_description AS Description, item_expirationdate AS Expiration, inventory_type AS Category, supplier_info AS Supplier, cost_per_unit AS Cost, sellingprice_per_unit AS Price " +
+                "FROM inventory WHERE inventory_sku = @sku", connect.getconnection);
+
+            // Add the SKU to the query to prevent SQL injection.
+            command.Parameters.AddWithValue("@sku", sku);
+
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             DataTable table = new DataTable();
-            adapter.Fill(table); // Fills the table with query results.
+            adapter.Fill(table); // Fill the table with the query results.
             return table;
         }
 
         private void ItemDetailsExportButton_Click(object sender, EventArgs e)
         {
-            // When the user clicks the export button, we export the selected item's details to a PDF.
+            // When the export button is clicked, it exports the selected item's details to a PDF.
             ExportSelectedItemToPDF();
         }
 
-        // This method exports all the details of the selected item to a PDF file.
+        // This method handles exporting the item's details to a PDF file.
         public void ExportSelectedItemToPDF()
         {
             try
             {
-                // Make sure the user actually selected a cell before doing anything.
+                // Make sure the user actually selected something before continuing.
                 if (ViewItemDetailsDataTable.SelectedCells.Count > 0)
                 {
-                    // Get the selected row from the data grid.
+                    // Get the selected row from the data grid view.
                     int selectedRowIndex = ViewItemDetailsDataTable.SelectedCells[0].RowIndex;
                     DataGridViewRow selectedRow = ViewItemDetailsDataTable.Rows[selectedRowIndex];
 
-                    // Grab the item's name (or whatever identifier we need). Default to "UnnamedItem" if it's empty.
-                    string itemName = selectedRow.Cells["Name"].Value?.ToString() ?? "UnnamedItem"; // Replace "Name" with your column name for item name.
-                    itemName = RemoveInvalidFileNameChars(itemName); // Clean up the name to make it safe for file saving.
+                    // Grab the item's name (or use a default if it's missing).
+                    string itemName = selectedRow.Cells["Name"].Value?.ToString() ?? "UnnamedItem";
+                    itemName = RemoveInvalidFileNameChars(itemName); // Clean up the name for file safety.
 
-                    // Collect all the item's details into a string. This will go in the PDF.
+                    // Collect all the item details into a string to add to the PDF.
                     StringBuilder itemDetails = new StringBuilder();
                     foreach (DataGridViewColumn column in ViewItemDetailsDataTable.Columns)
                     {
-                        string columnName = column.HeaderText; // Column name (e.g., "SKU", "Name").
-                        string cellValue = selectedRow.Cells[column.Index].Value?.ToString() ?? "N/A"; // Value in the cell.
-                        itemDetails.AppendLine($"{columnName}: {cellValue}"); // Add it to the details string.
+                        string columnName = column.HeaderText; // Column name like "SKU" or "Name".
+                        string cellValue = selectedRow.Cells[column.Index].Value?.ToString() ?? "N/A"; // Cell value, default to "N/A" if it's empty.
+                        itemDetails.AppendLine($"{columnName}: {cellValue}"); // Add each detail to the string.
                     }
 
-                    // Open a SaveFileDialog so the user can name the file and choose where to save it.
+                    // Open a SaveFileDialog so the user can name and save the file.
                     SaveFileDialog saveFileDialog = new SaveFileDialog
                     {
-                        Filter = "PDF files (*.pdf)|*.pdf", // Only show PDF as the save option.
+                        Filter = "PDF files (*.pdf)|*.pdf", // Only allow saving as a PDF.
                         Title = "Save PDF File",
-                        FileName = $"{itemName}_Details.pdf" // Default file name based on the item name.
+                        FileName = $"{itemName}_Details.pdf" // Set the default file name.
                     };
 
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -95,45 +116,43 @@ namespace ISDS454_IMS_Forms
                         // Create a new PDF document.
                         Document pdfDocument = new Document(PageSize.A4);
 
-                        // Set up a writer to save the PDF to the specified file path.
+                        // Set up a writer to save the PDF to the specified path.
                         PdfWriter.GetInstance(pdfDocument, new FileStream(filePath, FileMode.Create));
 
-                        // Open the document so we can start adding content.
+                        // Open the document to start adding content.
                         pdfDocument.Open();
 
-                        // Add some text to the PDF.
-                        pdfDocument.Add(new Paragraph($"Details of {itemName}")); // Title with the item's name.
-                        pdfDocument.Add(new Paragraph(" ")); // Blank line for spacing.
+                        // Add the title and the item details to the PDF.
+                        pdfDocument.Add(new Paragraph($"Details of {itemName}"));
+                        pdfDocument.Add(new Paragraph(" ")); // Add some space.
+                        pdfDocument.Add(new Paragraph(itemDetails.ToString())); // Add the collected details.
 
-                        // Add all the item details we collected earlier.
-                        pdfDocument.Add(new Paragraph(itemDetails.ToString()));
-
-                        // Done writing, so close the document.
+                        // Close the document once done.
                         pdfDocument.Close();
 
-                        // Let the user know it worked.
+                        // Let the user know the export was successful.
                         MessageBox.Show("The selected item's details have been exported successfully to: " + filePath, "Export Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    // If nothing is selected, tell the user to pick something.
+                    // If no cell is selected, prompt the user to select one.
                     MessageBox.Show("Please select a cell first!");
                 }
             }
             catch (Exception ex)
             {
-                // Catch any errors and show a message to the user.
+                // Catch any errors and display them to the user.
                 MessageBox.Show("An error occurred while exporting: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        // Helper method to make sure the file name doesn't contain any illegal characters.
+        // Helper method to make sure the file name doesn't contain any invalid characters.
         private string RemoveInvalidFileNameChars(string input)
         {
             foreach (char c in Path.GetInvalidFileNameChars())
             {
-                input = input.Replace(c.ToString(), "_"); // Replace illegal chars with underscores.
+                input = input.Replace(c.ToString(), "_"); // Replace invalid chars with underscores.
             }
             return input;
         }

@@ -31,10 +31,31 @@ namespace ISDS454_IMS_Forms
 
         private void ViewDetailsButton_Click(object sender, EventArgs e)
         {
-            ViewDetailsForm details = new ViewDetailsForm();
-            this.Close();
-            details.Show();
+            // Ensure that a row is selected
+            if (ViewInventoryDataTable.SelectedRows.Count > 0)
+            {
+                // Get the selected row (first selected row)
+                DataGridViewRow selectedRow = ViewInventoryDataTable.SelectedRows[0];
+
+                // Create a new instance of ViewDetailsForm and pass the selected row's data
+                ViewDetailsForm details = new ViewDetailsForm(
+                    selectedRow.Cells["SKU"].Value.ToString(),
+                    selectedRow.Cells["Warehouse"].Value.ToString(),
+                    selectedRow.Cells["Name"].Value.ToString(),
+                    selectedRow.Cells["Quantity"].Value.ToString(),
+                    selectedRow.Cells["Location"].Value.ToString()
+                );
+
+                // Close this form and show the next form
+                this.Close();
+                details.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to view details.");
+            }
         }
+
 
         private void ViewLastUpdatesButton_Click(object sender, EventArgs e)
         {
