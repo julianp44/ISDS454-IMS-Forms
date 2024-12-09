@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2024 at 11:51 PM
+-- Generation Time: Dec 09, 2024 at 03:25 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -130,20 +130,6 @@ INSERT INTO `inventory` (`inventory_sku`, `warehouse_id`, `item_name`, `item_qua
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `inventory_view`
--- (See below for the actual view)
---
-CREATE TABLE `inventory_view` (
-`SKU` char(15)
-,`Warehouse ID` char(3)
-,`Name` varchar(50)
-,`Quantity` int(11)
-,`Location` varchar(50)
-);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `warehouse`
 --
 
@@ -161,15 +147,6 @@ INSERT INTO `warehouse` (`warehouse_id`, `warehouse_address`, `warehouse_phone`)
 ('001', '800 N State College Blvd, Fullerton, CA 92831', '951-123-1234'),
 ('002', '1600 Holloway Ave, San Francisco, CA 94132', '951-134-2329'),
 ('003', '1234 Main St, Los Angeles, CA 90001', '951-145-4567');
-
--- --------------------------------------------------------
-
---
--- Structure for view `inventory_view`
---
-DROP TABLE IF EXISTS `inventory_view`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `inventory_view`  AS SELECT `inventory`.`inventory_sku` AS `SKU`, `inventory`.`warehouse_id` AS `Warehouse ID`, `inventory`.`item_name` AS `Name`, `inventory`.`item_quantity` AS `Quantity`, `inventory`.`item_location` AS `Location` FROM `inventory` ;
 
 --
 -- Indexes for dumped tables
